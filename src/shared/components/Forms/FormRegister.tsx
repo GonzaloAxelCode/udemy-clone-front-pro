@@ -3,8 +3,8 @@ import Button from "@/shared/UIComponents/Buttons/Button";
 import Input from "@/shared/UIComponents/Inputs/Input.styled";
 import InputPassword from "@/shared/UIComponents/Inputs/InputPassword";
 import { useState } from "react";
-import InlineError from "../UIComponents/others/InlineError";
-import Space from "../UIComponents/others/Space";
+import InlineError from "../../UIComponents/others/InlineError";
+import Space from "../../UIComponents/others/Space";
 
 const FormRegister = () => {
   const [formData, setFormData] = useState({

@@ -3,13 +3,16 @@ import styled, { css } from "styled-components";
 interface FlexProps {
   minScreen?: number;
   maxScreen?: number;
+  col?: boolean;
+  noItemsCenter?: boolean;
+  justifyCenter?: boolean;
 }
 
 const Flex = styled.div<FlexProps>`
   display: flex;
-  align-items: center;
-  
-  height: 100%;
+  flex-direction: ${(props) => (props.col ? "column" : "row")};
+  align-items: ${(props) => (!props.noItemsCenter ? "center" : " flex-start")};
+  justify-center: ${(props) => (props.justifyCenter ? "center" : "flex-start")};
 
   /* Aplicar estilos específicos según el ancho mínimo y máximo proporcionados */
   ${(props) =>

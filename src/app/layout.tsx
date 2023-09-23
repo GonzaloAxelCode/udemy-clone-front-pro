@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <Providers>
-        <body>
+        <body >
           <Navbar />
           <div style={{ paddingTop: "70px" }}>
             <section>{children}</section>

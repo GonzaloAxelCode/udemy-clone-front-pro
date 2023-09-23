@@ -11,6 +11,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        dark: {
+          100: "#2d2f31",
+        },
+        purplegray: "#c0c4fc;",
         gray: {
           100: "#f7f9fa",
           150: "#e4e8eb",
@@ -96,6 +100,8 @@ const config: Config = {
         lg: "1.125rem", // Tamaño de fuente grande
         xl: "1.25rem", // Tamaño de fuente extra grande
         "2xl": "1.5rem", // Tamaño de fuente 2x extra grande
+        "3xl": "1.75rem",
+        "4xl": "2rem",
       },
     },
   },
