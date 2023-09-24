@@ -26,7 +26,7 @@ const MenuCategories = () => {
           {categorias.map((el, index) => (
             <li key={index} onMouseEnter={() => setHoverCategory(el)}>
               <Link
-                className="flex justify-between py-2 text-gray-400 hover:text-purple-300"
+                className="flex justify-between py-1 text-gray-400 hover:text-purple-300"
                 href="#"
               >
                 <span className="text-sm ">{el.text}</span>
@@ -52,7 +52,7 @@ const MenuCategories = () => {
                     onMouseEnter={() => setHoverSubCategory(subCategoria)}
                   >
                     <Link
-                      className="flex justify-between py-2 text-gray-400 hover:text-purple-300"
+                      className="flex justify-between py-1 text-gray-400 hover:text-purple-300"
                       href="#"
                     >
                       <span className="text-sm ">{subCategoria.text}</span>
@@ -76,7 +76,7 @@ const MenuCategories = () => {
                 (subSubCategoria: any, index: number) => (
                   <li key={index}>
                     <Link
-                      className="flex justify-between py-2 text-gray-400 hover:text-purple-300"
+                      className="flex justify-between py-1 text-gray-400 hover:text-purple-300"
                       href="#"
                     >
                       <span className="text-sm ">{subSubCategoria.text}</span>

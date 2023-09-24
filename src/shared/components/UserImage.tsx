@@ -1,12 +1,9 @@
-const UserImage = () => {
+import { cn } from "tailwind-cn";
+
+const UserImage = ({ className = "" }: any) => {
   return (
-    <div>
-      <img
-        src="https://www.svgrepo.com//show/5125/avatar.svg"
-        className="rounded-full"
-        width={32}
-        height={32}
-      />
+    <div className={cn("bg-dark-100 flex items-center justify-center rounded-full", className)}>
+      <span className="text-white text-md font-bold">G</span>
     </div>
   );
 };

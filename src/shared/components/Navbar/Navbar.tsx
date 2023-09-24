@@ -10,13 +10,15 @@ import SearchIcon from "@/shared/UIComponents/icons/SearchIcon";
 import ThreeLinesIcon from "@/shared/UIComponents/icons/ThreeLinesIcon";
 import Dialog from "@/shared/UIComponents/others/Dialog";
 import Logo from "@/shared/UIComponents/others/Logo";
+import { useUIContext } from "@/shared/hooks";
 import Link from "next/link";
 import UserImage from "../UserImage";
 import ItemNavDialog from "./ItemNavDialog";
 import MenuCategories from "./MenuCategories";
 
 const Navbar = () => {
-  const isAuth = true;
+  const isAuth = false;
+  const { setOpenMenuNav, openMenuNav } = useUIContext();
   return (
     <WrapperNabvar>
       <Flex maxScreen={800} className="flex-grow">
@@ -124,7 +126,7 @@ const Navbar = () => {
               >
                 <div>
                   <UserImage />
-                <p>gonzaloaxel@gmail.com</p>
+                  <p>gonzaloaxel@gmail.com</p>
                 </div>
               </Dialog>
             </ItemNavDialog>
@@ -141,7 +143,11 @@ const Navbar = () => {
       </Flex>
 
       <Flex minScreen={800} className="flex-grow">
-        <Link href="#">
+        <Link
+          onClick={() => setOpenMenuNav(true)}
+          className="flex items-center"
+          href="#"
+        >
           <ThreeLinesIcon />
         </Link>
 

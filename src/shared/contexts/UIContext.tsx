@@ -5,6 +5,8 @@ export interface UIContextType {
   isModalOpen: boolean;
   openModal: () => void;
   closeModal: () => void;
+  openMenuNav: any;
+  setOpenMenuNav: any;
 }
 
 export const UIContext = createContext<UIContextType | undefined>(undefined);
@@ -15,6 +17,7 @@ interface UIProviderProps {
 
 export function UIProvider({ children }: UIProviderProps): JSX.Element {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [openMenuNav, setOpenMenuNav] = useState(false);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -28,6 +31,8 @@ export function UIProvider({ children }: UIProviderProps): JSX.Element {
     isModalOpen,
     openModal,
     closeModal,
+    openMenuNav,
+    setOpenMenuNav,
   };
 
   return <UIContext.Provider value={value}>{children}</UIContext.Provider>;

@@ -15,7 +15,7 @@ const PresentationCourse = () => {
         col
         noItemsCenter
         justifyCenter
-        className="flex-end m-auto text-white lg:w-[50%] w-[80%]"
+        className="flex-end m-auto text-white lg:w-[60%] w-[70%]"
       >
         <Breadcrumb />
         <Title className="mt-3 mb-2 ">
@@ -23,7 +23,7 @@ const PresentationCourse = () => {
         </Title>
         <p
           style={{ fontFamily: "'SF Pro Text' , sans-serif" }}
-          className="text-xl mb-4 w-full"
+          className="text-lg mb-4 w-full"
         >
           Aprende React: Hooks, State, MERN, Next.js, Remix Run, Redux, Tailwind
           CSS, Prisma y mucho más - CREANDO +15 APPS REALES
@@ -74,7 +74,7 @@ const PresentationCourse = () => {
           </div>
         </Flex>
       </Flex>
-      <Flex className="lg:w-[30%] w-[0%]"></Flex>
+      <Flex className="lg:w-[340px] w-[0%]"></Flex>
     </Flex>
   );
 };

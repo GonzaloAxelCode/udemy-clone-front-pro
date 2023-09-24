@@ -50,3 +50,12 @@ body {
   box-sizing: border-box;
   font-family: "Udemy Sans", sans-serif;
 }
+.ease-in-animation {
+  @apply transition duration-500 ease-in-out;
+}
+.shadow-top {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.shadow-top-dark {
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.08), 0 -4px 12px rgba(0, 0, 0, 0.16);
+}

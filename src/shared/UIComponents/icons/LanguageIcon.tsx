@@ -6,10 +6,10 @@ const LanguageIcon = ({ scale = "1", ...args }: { scale?: string }) => {
       aria-hidden="true"
       focusable="false"
       width={24}
+      height={24}
       style={{
         scale,
       }}
-      height={24}
       {...args}
     >
       <defs>

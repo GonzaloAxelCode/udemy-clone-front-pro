@@ -6,6 +6,7 @@ interface FlexProps {
   col?: boolean;
   noItemsCenter?: boolean;
   justifyCenter?: boolean;
+  full?: boolean;
 }
 
 const Flex = styled.div<FlexProps>`
@@ -13,6 +14,7 @@ const Flex = styled.div<FlexProps>`
   flex-direction: ${(props) => (props.col ? "column" : "row")};
   align-items: ${(props) => (!props.noItemsCenter ? "center" : " flex-start")};
   justify-center: ${(props) => (props.justifyCenter ? "center" : "flex-start")};
+  width: ${(props) => (props.full ? "100%" : "")};
 
   /* Aplicar estilos específicos según el ancho mínimo y máximo proporcionados */
   ${(props) =>
