@@ -7,11 +7,12 @@ const HeartIcon = ({ scale = "0.93", ...args }: { scale?: string }) => {
       role="img"
       focusable="false"
       className="ud-icon ud-icon-medium ud-icon-color-neutral"
+     
+      width={24}
+      height={24}
       style={{
         scale,
       }}
-      width={24}
-      height={24}
       {...args}
     >
       <defs>

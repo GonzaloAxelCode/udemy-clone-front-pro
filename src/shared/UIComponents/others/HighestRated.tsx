@@ -1,4 +1,4 @@
-const HighestRated = () => {
+const HighestRated = ({ text = "Highest Rated" }: { text?: string }) => {
   return (
     <div
       style={{
@@ -9,9 +9,9 @@ const HighestRated = () => {
         lineHeight: "1.2",
         letterSpacing: "-.02rem",
       }}
-      className="text-xs text-orange-500 bg-orange-200"
+      className="text-xs text-orange-500 bg-yellow-200"
     >
-      Highest Rated
+      {text}
     </div>
   );
 };

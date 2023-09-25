@@ -16,6 +16,7 @@ const config: Config = {
         },
         purplegray: "#c0c4fc;",
         graywhite: "#e0e0e0",
+        linkpurple: "#5624d0",
         gray: {
           100: "#f7f9fa",
           150: "#e4e8eb",

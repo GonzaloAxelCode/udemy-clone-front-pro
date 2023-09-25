@@ -6,7 +6,7 @@ const Title = ({
   size = "md",
 }: {
   className?: string;
-  children: string;
+  children: string | any;
   size?: string;
 }) => {
   return <h1 className={cn("text-4xl font-bold ", className)}>{children}</h1>;

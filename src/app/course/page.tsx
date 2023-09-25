@@ -2,6 +2,7 @@
 import Flex from "@/shared/UIComponents/Wrappers/Flex";
 import WrapperSection from "@/shared/UIComponents/Wrappers/WrapperSection";
 import CourseContent from "./components/CourseContent";
+import CourseRatingReviews from "./components/CourseRatingReviews";
 import CurseBottomFixed from "./components/CurseBottomFixed";
 import CurseTopFixed from "./components/CurseTopFixed";
 import DescriptionCourse from "./components/DescriptionCourse";
@@ -21,12 +22,12 @@ const CoursePage = () => {
       <WrapperSection>
         <WhatYouLearn />
         <CourseContent />
-
         <RequerimentsCourse />
         <DescriptionCourse />
         <StudentsAlsoBought />
         <FrequentlyBoughtTogether />
         <InstructorCourse />
+        <CourseRatingReviews />
         <MoreCoursesBy />
       </WrapperSection>
       <CurseBottomFixed />

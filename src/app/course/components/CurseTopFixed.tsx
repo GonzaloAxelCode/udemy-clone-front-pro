@@ -12,7 +12,7 @@ const FixedTop = styled.div`
 
 const CurseTopFixed = () => {
   return (
-    <FixedTop>
+    <FixedTop className="hidden lg:block">
       <Flex
         maxScreen={600}
         full

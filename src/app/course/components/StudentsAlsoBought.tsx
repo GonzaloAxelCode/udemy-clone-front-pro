@@ -2,8 +2,11 @@ import Button from "@/shared/UIComponents/Buttons/Button";
 import Title from "@/shared/UIComponents/Texts/Title";
 import Flex from "@/shared/UIComponents/Wrappers/Flex";
 import HeartIcon from "@/shared/UIComponents/icons/HeartIcon";
+//@ts-ignore
+import ReactStars from "react-stars";
 
 import PeopleIcon from "@/shared/UIComponents/icons/PeopleIcon";
+import HighestRated from "@/shared/UIComponents/others/HighestRated";
 import _bought_courses from "./_boughtcourses";
 const StudentsAlsoBought = () => {
   return (
@@ -23,26 +26,42 @@ const StudentsAlsoBought = () => {
                 <Flex w-full className="mr-2">
                   <img src={el.image} width={64} height={64} />
                 </Flex>
-                <Flex col noItemsCenter between className="max-w-[50%]">
+                <Flex full col noItemsCenter between className="max-w-[50%]">
                   <span className="text-md font-bold text-dark-100  leading-4 ">
                     {el.title}
                   </span>
-                  <span className="text-sm mt-3">
-                    <span className="font-bold text-green-400">
-                      {el.hours} total hours
-                    </span>
-                    <span className="text-gray-400"> &middot; </span>
-                    <span className="text-gray-400 mt-auto">
-                      Updated {el.dataUpdated}
-                    </span>
+                  <span className="w-full text-sm mt-3">
+                    <Flex
+                      full
+                      className="font-bold text-green-400 space-x-1 flex-grow"
+                    >
+                      <span>
+                        {el.betSeller && <HighestRated text="Bestseller" />}
+                      </span>
+                      <span>{el.hours} total hours</span>
+
+                      <span className="text-gray-400"> &middot; </span>
+                      <span className="text-gray-400 font-normal mt-auto">
+                        Updated {el.dataUpdated}
+                      </span>
+                    </Flex>
                   </span>
                 </Flex>
-                <Flex className="space-x-3 flex-end ml-auto ">
+                <Flex className="space-x-3 flex-start ml-auto ">
                   <Flex full className="space-x-1">
-                    <span className="text-orange-300 font-bold text-sm mt-1">
+                    <span className="text-orange-400 font-bold text-sm mt-1">
                       {el.raiting}
                     </span>
-                    <span></span>
+                    <span>
+                      <ReactStars
+                        count={1}
+                        size={20}
+                        char="★"
+                        edit={false}
+                        color1={"#b4690e"}
+                        color2={"#b4690e"}
+                      />
+                    </span>
                   </Flex>
                   <Flex>
                     <PeopleIcon scale="0.65" />
