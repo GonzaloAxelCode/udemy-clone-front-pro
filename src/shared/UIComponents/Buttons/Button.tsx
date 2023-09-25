@@ -4,7 +4,7 @@ import { cn } from "tailwind-cn";
 
 type ButtonProps = {
   children: any;
-  variant: "primary" | "secondary" | "purple" | "white";
+  variant: "primary" | "secondary" | "purple" | "white" | "invert-primary";
   size?: "sm" | "md" | "xl";
   type?: "button" | "submit" | "reset";
   extendClass?: string;
@@ -16,6 +16,7 @@ const Button: React.FC<ButtonProps> = ({
   size = "sm",
   type = "button",
   extendClass = "",
+
   ...args
 }) => {
   let smStyle = "font-sm text-sm px-2 h-[40px]";
@@ -27,7 +28,11 @@ const Button: React.FC<ButtonProps> = ({
       type={type}
       style={{
         border:
-          variant === "primary" ? "1px solid #000" : "1px solid transparent",
+          variant === "primary"
+            ? "1px solid #000"
+            : variant === "invert-primary"
+            ? "1px solid #fff"
+            : "1px solid transparent",
       }}
       className={cn(
         " font-bold text-sm",
@@ -36,9 +41,10 @@ const Button: React.FC<ButtonProps> = ({
         variant === "secondary" &&
           "bg-gray-500 active:ring-gray-500 text-white hover:bg-gray-400",
         variant === "purple" &&
-        "bg-purple-300 active:ring-purple-300 text-white hover:bg-purple-400",
+          "bg-purple-300 active:ring-purple-300 text-white hover:bg-purple-400",
         variant === "white" &&
           "bg-white active:ring-white text-dark-100 hover:bg-graywhite",
+        variant === "invert-primary" && "bg-transparent",
         size === "md" && mdStyle,
         size === "sm" && smStyle,
         size === "xl" && xlStyle,

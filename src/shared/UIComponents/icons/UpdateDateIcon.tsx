@@ -5,7 +5,6 @@ const UpdateDateIcon = ({ scale = "1", ...args }: { scale?: string }) => {
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
       focusable="false"
-      className="ud-icon ud-icon-xsmall ud-icon-color-neutral last-update-date__icon"
       width={24}
       height={24}
       style={{

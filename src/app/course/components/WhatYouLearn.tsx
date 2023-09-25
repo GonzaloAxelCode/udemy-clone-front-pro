@@ -20,27 +20,35 @@ const WhatYouLearn = () => {
     <Flex
       col
       noItemsCenter
-      className="m-auto w-full p-6 border-solid border-1 border-gray-200 "
+      className="m-auto w-full p-4 border-solid border-1 border-gray-200 "
     >
-      <Title className="mt-3 mb-2 text-2xl ">What youll learn</Title>
-      <Flex>
+      <Title className="text-2xl px-2 py-3">What youll learn</Title>
+      <Flex noItemsCenter>
         <Flex col noItemsCenter>
           {listaLearn.slice(0, 5).map((el: any, index: number) => {
             return (
-              <Flex key={index} className="space-x-3">
-                <CheckIcon scale="0.7" />
-                <span className="text-sm text-gray-400">{el.text}</span>
-              </Flex>
+              <div key={index} className="space-x-3 flex py-1">
+                <span className="px-1">
+                  <CheckIcon scale="0.7" />
+                </span>
+                <div className="flex ">
+                  <span className="text-sm text-gray-400">{el.text}</span>
+                </div>
+              </div>
             );
           })}
         </Flex>
         <Flex col noItemsCenter>
           {listaLearn.slice(5).map((el: any, index: number) => {
             return (
-              <Flex key={index} className="space-x-3">
-                <CheckIcon scale="0.7" />
-                <span className="text-sm text-gray-400">{el.text}</span>
-              </Flex>
+              <div key={index} className="space-x-3 flex py-1">
+                <span className="px-1">
+                  <CheckIcon scale="0.7" />
+                </span>
+                <div className="flex">
+                  <span className="text-sm text-gray-400">{el.text}</span>
+                </div>
+              </div>
             );
           })}
         </Flex>

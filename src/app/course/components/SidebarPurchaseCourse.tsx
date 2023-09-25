@@ -9,38 +9,44 @@ import InfiniteIcon from "@/shared/UIComponents/icons/InfiniteIcon";
 import MovilIcon from "@/shared/UIComponents/icons/MovilIcon";
 import PlayIcon from "@/shared/UIComponents/icons/PlayIcon";
 import VideoIcon from "@/shared/UIComponents/icons/VideoIcon";
-import WrapperSidebarPurchase from "@/shared/components/WrapperSidebarPurchase";
 import Link from "next/link";
 import { cn } from "tailwind-cn";
 import useScrollY from "../../../shared/hooks/useScrollY";
 
-const SidebarPurchaseCourseFloat = ({ extraClassNames = "" }) => {
+const SidebarPurchaseCourse = ({ extraClassNames = "" }) => {
   const scrollY = useScrollY();
   return (
-    <WrapperSidebarPurchase scrollY={scrollY}>
-      <Flex col noItemsCenter className={cn("w-[340px]", extraClassNames)}>
-        <Link href="#" className={cn("",scrollY >= 300 && "hidden")}>
-          <Flex justifyCenter className="relative">
-            {/* Aplicar el gradiente */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black to-transparent opacity-60 z-0"></div>
-
-            <img
-              className="relative z-1"
-              src="https://img-c.udemycdn.com/course/750x422/543600_64d1_4.jpg"
-              alt="Course Preview"
-            />
-            <p
+    <div className="bg-white">
+      <Flex
+        col
+        noItemsCenter
+        className={cn("w-[340px] relative", extraClassNames)}
+      >
+        <Link
+          style={{
+            position: "relative",
+            zIndex: 10,
+          }}
+          href="#"
+          className={cn(scrollY >= 300 && "hidden")}
+        >
+          <Flex justifyCenter>
+            <div className="flex flex-col gradient-dark">
+              <img
+                src="https://img-c.udemycdn.com/course/750x422/543600_64d1_4.jpg"
+                alt="Course Preview"
+              />
+            </div>
+            <div
               style={{
                 position: "absolute",
                 left: "50%",
                 transform: "translate(-50%)",
+                zIndex: 8,
               }}
             >
               <PlayIcon scale="2.5" />
-            </p>
-            <p className="absolute left-[50%] transform translate-x-[-50%] text-white font-bold bottom-2">
-              Preview this course
-            </p>
+            </div>
           </Flex>
         </Link>
 
@@ -107,17 +113,32 @@ const SidebarPurchaseCourseFloat = ({ extraClassNames = "" }) => {
                 </span>
               </Flex>
 
-              <Flex className="space-x-2 flex-grow my-3" full justifyCenter>
+              <Flex
+                className="space-x-2 flex-grow my-5 mb-7"
+                full
+                justifyCenter
+              >
                 <LinkUnder href="#share">Share</LinkUnder>
                 <LinkUnder href="#gift">Gift this course</LinkUnder>
                 <LinkUnder href="#coupon">Apply Coupon</LinkUnder>
               </Flex>
             </Flex>
           </Flex>
+
+          <Flex col noItemsCenter className="space-y-2 pt-3  bg-white hr-top">
+            <p className="text-lg  font-bold">Training 5 or more people?</p>
+            <span className="text-sm text-gray-400">
+              Get your team access to 22,000+ top Udemy courses anytime,
+              anywhere.
+            </span>
+            <Button variant="primary" extendClass="w-full">
+              Try Udemy Business
+            </Button>
+          </Flex>
         </Flex>
       </Flex>
-    </WrapperSidebarPurchase>
+    </div>
   );
 };
 
-export default SidebarPurchaseCourseFloat;
+export default SidebarPurchaseCourse;

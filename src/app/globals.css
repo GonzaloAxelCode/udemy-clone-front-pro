@@ -45,6 +45,7 @@
 
 body {
   font-family: "Udemy Sans", sans-serif;
+  color: #2d2f31;
 }
 * {
   box-sizing: border-box;
@@ -54,8 +55,70 @@ body {
   @apply transition duration-500 ease-in-out;
 }
 .shadow-top {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .shadow-top-dark {
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.08), 0 -4px 12px rgba(0, 0, 0, 0.16);
 }
+.gradient-dark {
+  position: relative;
+  display: inline-block;
+}
+
+.gradient-dark::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(45, 47, 49, 0) 0%,
+    rgba(45, 47, 49, 0.9) 100%
+  );
+  z-index: 1;
+}
+
+/* funcionalidad de fixed de curso*/
+.wrapper {
+  width: 100%;
+}
+
+.box {
+  position: absolute;
+
+  top: 30px;
+  height: 100%;
+}
+.z-navbar-top {
+  z-index: 30;
+}
+.z-navbar-bottom {
+  z-index: 30;
+}
+.z-purchase-course {
+  z-index: 40;
+}
+
+.wrapper .stickyf {
+  position: sticky;
+  top: 0;
+  right: 1px;
+}
+.hr-bottom {
+  border-bottom: 1px solid #d1d7dc;
+}
+.hr-left {
+  border-left: 1px solid #d1d7dc;
+}
+.hr-right {
+  border-right: 1px solid #d1d7dc;
+}
+.hr-top {
+  border-top: 1px solid #d1d7dc;
+}
+.hr-full {
+  border: 1px solid #d1d7dc;
+}
+

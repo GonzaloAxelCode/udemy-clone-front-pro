@@ -151,9 +151,14 @@ const Navbar = () => {
           <ThreeLinesIcon />
         </Link>
 
-        <Link href="#" className="flex-grow flex justify-center">
-          <Logo />
-        </Link>
+        <div className="flex-grow flex justify-center">
+          <div className="ml-24">
+            <Link href="#">
+              <Logo scale="0.83" />
+            </Link>
+          </div>
+        </div>
+
         <Flex>
           <Link href="#" className="px-3">
             <SearchIcon />

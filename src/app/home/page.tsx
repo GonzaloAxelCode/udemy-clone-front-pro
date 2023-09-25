@@ -1,6 +1,6 @@
 "use client";
 
-import Presentation from "../../shared/components/Presentation";
+import Presentation from "./components/Presentation";
 
 const HomePage = () => {
   return (

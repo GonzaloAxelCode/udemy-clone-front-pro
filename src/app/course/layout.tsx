@@ -1,7 +1,34 @@
+"use client";
+import Flex from "@/shared/UIComponents/Wrappers/Flex";
+import useScrollY from "@/shared/hooks/useScrollY";
 import React from "react";
+import { cn } from "tailwind-cn";
+import SidebarPurchaseCourse from "./components/SidebarPurchaseCourse";
 
-const layout = ({ children }: { children: React.ReactNode }) => {
-  return <section className="w-full">{children}</section>;
+const Layout = ({ children }: { children: React.ReactNode }) => {
+  const scrollY = useScrollY();
+  return (
+    <section className="relative w-full">
+      <div className="wrapper w-full">
+        <Flex full col noItemsCenter>
+          {children}
+        </Flex>
+
+        <div
+          id="#component-price"
+          className={cn(
+            "box right-[2%] xl:right-[10%]",
+            scrollY >= 300 && "z-purchase-course transform translate-y-5",
+            "hidden lg:block "
+          )}
+        >
+          <div className="sticky top-0 right-0">
+            <SidebarPurchaseCourse />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
-export default layout;
+export default Layout;

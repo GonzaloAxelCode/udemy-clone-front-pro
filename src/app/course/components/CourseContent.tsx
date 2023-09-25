@@ -6,6 +6,7 @@ import Flex from "@/shared/UIComponents/Wrappers/Flex";
 import ArrowDownIcon from "@/shared/UIComponents/icons/ArrowDownIcon";
 import VideoIcon from "@/shared/UIComponents/icons/VideoIcon";
 import Link from "next/link";
+import { cn } from "tailwind-cn";
 import temarioCursoReact from "./_temario_courses";
 
 const CourseContent = () => {
@@ -14,7 +15,7 @@ const CourseContent = () => {
       <Flex className="w-full" col noItemsCenter>
         <Title className="mt-3 mb-2 text-2xl ">Course content </Title>
 
-        <Flex className="w-full justify-between my-2">
+        <Flex between className="w-full my-2">
           <span className="text-sm text-gray-500">
             46 sections &middot; 467 lectures &middot; 62h 16m total length
           </span>
@@ -24,16 +25,19 @@ const CourseContent = () => {
         </Flex>
 
         <AccordionGroup>
-          {temarioCursoReact.map((el) => {
+          {temarioCursoReact.map((el: any, index: number) => {
             return (
               <Acordeon
                 key={el.id}
-                classNameHeader="px-6 py-4 bg-gray-100 border border-1 border-gray-200 border-solid cursor-pointer"
+                classNameHeader={cn(
+                  "px-6 py-4 bg-gray-100 hr-bottom hr-left hr-right cursor-pointer",
+                  index === 0 && "hr-top"
+                )}
                 headerComponent={
-                  <Flex className="justify-between ">
+                  <Flex between full>
                     <Flex>
                       <ArrowDownIcon />
-                      <Title className="text-base ">{el.title}</Title>
+                      <Title className="text-base ml-2">{el.title}</Title>
                     </Flex>
                     <span className="text-sm text-gray-500">
                       {el.numLectures} lectures &middot; {el.timeMinLectures}
@@ -41,10 +45,12 @@ const CourseContent = () => {
                   </Flex>
                 }
               >
-                {el.subItems.map((el2: any, index: any) => {
+                {el.subItems.map((el2: any, index2: any) => {
                   return (
                     <Flex
-                      className="justify-between w-full cursor-pointer px-6 py-4 border-l border-r border-gray-200 border-solid"
+                      className={cn(
+                        "hr-top justify-between w-full cursor-pointer px-6 py-4 border-l border-r border-gray-200 border-solid"
+                      )}
                       key={el2.id}
                     >
                       <Flex className="space-x-3 flex-grow">

@@ -1,12 +1,18 @@
+import Button from "@/shared/UIComponents/Buttons/Button";
+import LinkUnder from "@/shared/UIComponents/Links/LinkUnder";
 import Title from "@/shared/UIComponents/Texts/Title";
 import Flex from "@/shared/UIComponents/Wrappers/Flex";
+import HeartWhite from "@/shared/UIComponents/icons/HeartWhite";
 import LanguageIconWhite from "@/shared/UIComponents/icons/LanguageIconWhite";
+import PlayIcon from "@/shared/UIComponents/icons/PlayIcon";
 import SubtitleIcon from "@/shared/UIComponents/icons/SubtitleIcon";
 import UpdateDateIcon from "@/shared/UIComponents/icons/UpdateDateIcon";
+import HighestRated from "@/shared/UIComponents/others/HighestRated";
 import Breadcrumb from "@/shared/components/Breadcrumb";
 import Link from "next/link";
 //@ts-ignore
 import ReactStars from "react-stars";
+import { cn } from "tailwind-cn";
 
 const PresentationCourse = () => {
   return (
@@ -15,9 +21,32 @@ const PresentationCourse = () => {
         col
         noItemsCenter
         justifyCenter
-        className="flex-end m-auto text-white lg:w-[60%] w-[70%]"
+        className="flex-end m-auto text-white lg:max-w-[700px] max-w-[600px]"
       >
         <Breadcrumb />
+        <Flex>
+          <Link href="#" className={cn("lg:hidden relative z-1 py-3")}>
+            <Flex justifyCenter>
+              <div className="flex flex-col gradient-dark">
+                <img
+                  src="https://img-c.udemycdn.com/course/750x422/543600_64d1_4.jpg"
+                  alt="Course Preview"
+                />
+              </div>
+              <div
+                style={{
+                  position: "absolute",
+                  left: "50%",
+                  transform: "translate(-50%)",
+                  zIndex: 8,
+                }}
+              >
+                <PlayIcon scale="2.5" />
+              </div>
+            </Flex>
+          </Link>
+        </Flex>
+
         <Title className="mt-3 mb-2 ">
           React - La Guía Completa: Hooks Context Redux MERN +15 Apps
         </Title>
@@ -29,7 +58,8 @@ const PresentationCourse = () => {
           CSS, Prisma y mucho más - CREANDO +15 APPS REALES
         </p>
         <Flex noItemsCenter className="space-x-2 items-center">
-          <Link href="#" className="flex space-x-1 items-center">
+          <Link href="#" className="flex space-x-2 items-center">
+            <HighestRated />
             <Flex className="space-x-1">
               <span className="text-orange-300 font-bold text-sm mt-1">
                 4.8
@@ -45,7 +75,10 @@ const PresentationCourse = () => {
                 />
               </span>
             </Flex>
-            <span className="underline text-sm text-purplegray"> (25,091 ratings)</span>
+            <span className="underline text-sm text-purplegray">
+              {" "}
+              (25,091 ratings)
+            </span>
           </Link>
           <span className="text-sm">105,177 students</span>
         </Flex>
@@ -73,6 +106,9 @@ const PresentationCourse = () => {
             </p>
           </div>
         </Flex>
+        <div className="lg:hidden block mt-3 w-full">
+          <BoxPrices />
+        </div>
       </Flex>
       <Flex className="lg:w-[340px] w-[0%]"></Flex>
     </Flex>
@@ -80,3 +116,31 @@ const PresentationCourse = () => {
 };
 
 export default PresentationCourse;
+
+function BoxPrices() {
+  return (
+    <Flex full col noItemsCenter>
+      <Flex col noItemsCenter className="w-full">
+        <Title className="mb-3">S/249.90</Title>
+
+        <Flex className="w-full space-x-2 mt-2">
+          <Button extendClass="w-full" variant="purple" size="md">
+            Add to cart
+          </Button>
+          <Button extendClass="w-auto" variant="invert-primary" size="md">
+            <HeartWhite />
+          </Button>
+        </Flex>
+
+        <span className="m-auto text-xs py-3 text-white">
+          30-Day Money-Back Guarantee
+        </span>
+      </Flex>
+      <Flex className="space-x-2 flex-grow my-3" full justifyCenter>
+        <LinkUnder href="#share">Share</LinkUnder>
+        <LinkUnder href="#gift">Gift this course</LinkUnder>
+        <LinkUnder href="#coupon">Apply Coupon</LinkUnder>
+      </Flex>
+    </Flex>
+  );
+}

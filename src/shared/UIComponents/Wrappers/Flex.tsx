@@ -7,13 +7,21 @@ interface FlexProps {
   noItemsCenter?: boolean;
   justifyCenter?: boolean;
   full?: boolean;
+  between?: boolean;
 }
 
 const Flex = styled.div<FlexProps>`
   display: flex;
+
   flex-direction: ${(props) => (props.col ? "column" : "row")};
   align-items: ${(props) => (!props.noItemsCenter ? "center" : " flex-start")};
-  justify-center: ${(props) => (props.justifyCenter ? "center" : "flex-start")};
+  justify-content: ${(props) =>
+    props.justifyCenter
+      ? "center"
+      : props.between
+      ? "space-between"
+      : "flex-start"};
+
   width: ${(props) => (props.full ? "100%" : "")};
 
   /* Aplicar estilos específicos según el ancho mínimo y máximo proporcionados */
