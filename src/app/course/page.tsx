@@ -6,6 +6,7 @@ import CourseRatingReviews from "./components/CourseRatingReviews";
 import CurseBottomFixed from "./components/CurseBottomFixed";
 import CurseTopFixed from "./components/CurseTopFixed";
 import DescriptionCourse from "./components/DescriptionCourse";
+import FeaturedReview from "./components/FeaturedReview";
 import FrequentlyBoughtTogether from "./components/FrequentlyBoughtTogether";
 import InstructorCourse from "./components/InstructorCourse";
 import MoreCoursesBy from "./components/MoreCoursesBy";
@@ -24,6 +25,7 @@ const CoursePage = () => {
         <CourseContent />
         <RequerimentsCourse />
         <DescriptionCourse />
+        <FeaturedReview />
         <StudentsAlsoBought />
         <FrequentlyBoughtTogether />
         <InstructorCourse />

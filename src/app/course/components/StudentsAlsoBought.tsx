@@ -72,7 +72,10 @@ const StudentsAlsoBought = () => {
                   </Flex>
                 </Flex>
                 <Flex className="flex-end ml-auto ">
-                  <Button extendClass="rounded-full" variant="primary">
+                  <Button
+                    extendClass="rounded-full w-[40px] h-[40px]"
+                    variant="primary"
+                  >
                     <HeartIcon scale="0.8" />
                   </Button>
                 </Flex>

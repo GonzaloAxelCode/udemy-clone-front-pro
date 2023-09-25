@@ -8,6 +8,7 @@ import ElipsisIcon from "@/shared/UIComponents/icons/ElipsisIcon";
 import LikeIcon from "@/shared/UIComponents/icons/LikeIcon";
 import UserImage from "@/shared/components/UserImage";
 import _reviews_data from "./_reviews_data";
+//dasd
 //@ts-ignore
 import ReactStars from "react-stars";
 const CourseRatingReviews = () => {
@@ -25,7 +26,7 @@ const CourseRatingReviews = () => {
         {_reviews_data.map((el: any, index: number) => {
           return (
             <Flex
-              className="w-[45%] pt-6 pb-8 hr-top"
+              className="w-[46%] pt-6 pb-8 hr-top"
               col
               noItemsCenter
               key={index}
@@ -47,8 +48,8 @@ const CourseRatingReviews = () => {
                               size="15px"
                               char="★"
                               edit={false}
-                              color1={"#f69c08"}
-                              color2={"#f69c08"}
+                              color1={"#b4690e"}
+                              color2={"#b4690e"}
                             />
                           </span>
                         </Flex>
@@ -64,7 +65,9 @@ const CourseRatingReviews = () => {
                 </Flex>
               </Flex>
               <Flex col noItemsCenter full>
-                <p className="text-base text-gray-400 mb-6">{el.description}</p>
+                <p className="text-base text-gray-500 mb-6 line-p">
+                  {el.description}
+                </p>
                 <Flex>
                   <span className="text-xs text-gray-300 mr-3">Helpful? </span>
 

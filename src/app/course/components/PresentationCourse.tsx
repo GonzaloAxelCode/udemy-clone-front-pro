@@ -12,6 +12,7 @@ import Breadcrumb from "@/shared/components/Breadcrumb";
 import Link from "next/link";
 //@ts-ignore
 import ReactStars from "react-stars";
+
 import { cn } from "tailwind-cn";
 
 const PresentationCourse = () => {
