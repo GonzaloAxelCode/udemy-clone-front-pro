@@ -12,7 +12,7 @@ const _requeriments = [
 
 const RequerimentsCourse = () => {
   return (
-    <Flex col noItemsCenter>
+    <Flex col noItemsCenter className="mb-4">
       <Title className="mt-3 mb-2 text-2xl ">Requirements</Title>
       <ul className="list-disc ml-5">
         {_requeriments.map((el: any, index: number) => {

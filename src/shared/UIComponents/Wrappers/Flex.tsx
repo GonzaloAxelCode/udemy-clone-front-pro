@@ -8,12 +8,14 @@ interface FlexProps {
   justifyCenter?: boolean;
   full?: boolean;
   between?: boolean;
+  cssMax?: string;
+  cssMin?: string;
 }
 
 const Flex = styled.div<FlexProps>`
   display: flex;
 
-  flex-direction: ${(props) => (props.col ? "column" : "row")};
+  flex-direction: ${(props) => (props.col ? "column" : "")};
   align-items: ${(props) => (!props.noItemsCenter ? "center" : " flex-start")};
   justify-content: ${(props) =>
     props.justifyCenter
@@ -29,7 +31,7 @@ const Flex = styled.div<FlexProps>`
     props.minScreen &&
     css`
       @media (min-width: ${props.minScreen}px) {
-        display: none;
+        ${!props.cssMin ? "display:none;" : props.cssMin}
       }
     `}
 
@@ -37,7 +39,7 @@ const Flex = styled.div<FlexProps>`
     props.maxScreen &&
     css`
       @media (max-width: ${props.maxScreen}px) {
-        display: none;
+        ${!props.cssMax ? "display:none;" : props.cssMax}
       }
     `}
 `;

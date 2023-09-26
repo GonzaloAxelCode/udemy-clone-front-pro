@@ -14,8 +14,8 @@ const Footer = () => {
         className="bg-darkfull w-full footer-paddings"
       >
         <Flex full col noItemsCenter className="">
-          <Flex between noItemsCenter full className="">
-            <ul className="ul-footer">
+          <Flex between noItemsCenter full className="flex-col md:flex-row">
+            <ul className="ul-footer w-full">
               <li>
                 <a
                   href="/udemy-business/?locale=en_US&mx_pg=clp-angular-course&path=%2F&ref=footer"
@@ -61,7 +61,7 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-            <ul className="ul-footer">
+            <ul className="ul-footer w-full">
               <li>
                 <a
                   className="text-sm link-footer"
@@ -97,7 +97,7 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-            <ul className="ul-footer">
+            <ul className="ul-footer w-full">
               <li>
                 <a className="text-sm link-footer" href="/terms/">
                   Terms
@@ -128,9 +128,9 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-            <Flex full className="flex-end ml-auto">
+            <Flex full className="flex-end w-full">
               <Button
-                extendClass="w-auto flex items-center"
+                extendClass="w-auto flex ml-auto items-center"
                 variant="invert-primary"
               >
                 <Flex full className="h-full space-x-4 pr-6">

@@ -1,4 +1,4 @@
-const ArrowDownIcon = ({ scale = "0.9", ...args }) => {
+const ArrowDownIcon = ({ scale = "0.8", fill = "", ...args }) => {
   return (
     <svg
       xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -19,7 +19,7 @@ const ArrowDownIcon = ({ scale = "0.9", ...args }) => {
           <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z" />
         </symbol>
       </defs>
-      <g fill="#2D2F31">
+      <g fill={fill}>
         <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z" />
       </g>
     </svg>

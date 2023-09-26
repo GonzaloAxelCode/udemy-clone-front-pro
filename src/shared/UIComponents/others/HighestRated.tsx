@@ -1,4 +1,12 @@
-const HighestRated = ({ text = "Highest Rated" }: { text?: string }) => {
+import { cn } from "tailwind-cn";
+
+const HighestRated = ({
+  text = "Highest Rated",
+  className = "",
+}: {
+  text?: string;
+  className?: string;
+}) => {
   return (
     <div
       style={{
@@ -9,7 +17,7 @@ const HighestRated = ({ text = "Highest Rated" }: { text?: string }) => {
         lineHeight: "1.2",
         letterSpacing: "-.02rem",
       }}
-      className="text-xs text-orange-500 bg-yellow-200"
+      className={cn("text-xs text-orange-500 bg-yellow-200", className)}
     >
       {text}
     </div>

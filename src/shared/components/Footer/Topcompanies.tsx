@@ -10,7 +10,7 @@ const Topcompanies = () => {
           <span className="text-purplegray">Udemy Business</span> to build
           in-demand career skills.
         </Title>
-        <Flex full className="space-x-4">
+        <Flex full className="space-x-4 flex-wrap">
           <img
             src="https://s.udemycdn.com/partner-logos/v4/nasdaq-light.svg"
             alt="Nasdaq"

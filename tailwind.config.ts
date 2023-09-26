@@ -106,6 +106,9 @@ const config: Config = {
         "3xl": "1.75rem",
         "4xl": "2rem",
       },
+      fontFamily: {
+        "suisse-works": ["SuisseWorks", "sans"],
+      },
     },
   },
   plugins: [],

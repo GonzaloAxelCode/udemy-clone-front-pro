@@ -1,12 +1,10 @@
 "use client";
 import type { Metadata } from "next";
 
-import "../shared/styles/carbon.scss";
-
 import Footer from "@/shared/components/Footer/Footer";
 import MenuPhone from "@/shared/components/MenuPhone/MenuPhone";
 import Navbar from "@/shared/components/Navbar/Navbar";
-import "react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css";
+import "../shared/styles/carbon.scss";
 import "./globals.css";
 import Providers from "./providers";
 
@@ -26,9 +24,7 @@ export default function RootLayout({
         <body className="relative">
           <Navbar />
           <MenuPhone />
-
-          <section>{children}</section>
-
+          <div>{children}</div>
           <Footer />
         </body>
       </Providers>
