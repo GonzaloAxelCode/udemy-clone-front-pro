@@ -11,13 +11,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        dark: {
-          100: "#2d2f31",
-        },
         purplegray: "#c0c4fc;",
         graywhite: "#e0e0e0",
         linkpurple: "#5624d0",
         darkfull: "#1c1d1f",
+        tabdisable: "#6a6f73",
+
+        dark: {
+          100: "rgb(45,47,49)",
+        },
         gray: {
           100: "#f7f9fa",
           150: "#e4e8eb",

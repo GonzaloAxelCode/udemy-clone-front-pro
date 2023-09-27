@@ -13,7 +13,7 @@ interface Props {
 }
 const TopCoursesIn = ({ asLink = false, categoryname, courses }: Props) => {
   return (
-    <Flex col noItemsCenter>
+    <Flex col noItemsCenter id="tooltipBoundary">
       <Title className="flex flex-wrap mt-3  mb-1 text-2xl ">
         <span>Top courses in </span>
         {asLink ? (
@@ -24,16 +24,17 @@ const TopCoursesIn = ({ asLink = false, categoryname, courses }: Props) => {
           `${categoryname}`
         )}
       </Title>
-
-      <CarruselSimple>
-        {courses.map((el: any, index: number) => {
-          return (
-            <Carousel.Item key={index}>
-              <CardCourse {...el} />
-            </Carousel.Item>
-          );
-        })}
-      </CarruselSimple>
+      <div >
+        <CarruselSimple>
+          {courses.map((el: any, index: number) => {
+            return (
+              <Carousel.Item key={index}>
+                <CardCourse {...el} />
+              </Carousel.Item>
+            );
+          })}
+        </CarruselSimple>
+      </div>
     </Flex>
   );
 };

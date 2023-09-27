@@ -1,9 +1,9 @@
 "use client";
-import type { Metadata } from "next";
-
 import Footer from "@/shared/components/Footer/Footer";
 import MenuPhone from "@/shared/components/MenuPhone/MenuPhone";
 import Navbar from "@/shared/components/Navbar/Navbar";
+import type { Metadata } from "next";
+import "rc-tooltip/assets/bootstrap_white.css";
 import "../shared/styles/carbon.scss";
 import "./globals.css";
 import Providers from "./providers";

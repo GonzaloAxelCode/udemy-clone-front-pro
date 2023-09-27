@@ -5,6 +5,8 @@ const listaLearn = [
   { text: "What a target market is and what it means for your business" },
   { text: "Who your target market is" },
   { text: "Why your customers buy from you" },
+
+
   { text: "The difference between sales and marketing" },
   { text: "How to best reach your ideal customer/target market" },
   { text: "The objectives of your website" },

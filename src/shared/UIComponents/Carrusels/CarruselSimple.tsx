@@ -32,6 +32,7 @@ const CarruselSimple = ({
   rows = 1,
   gap = 15,
   buttonsCenter = false,
+  ...args
 }: {
   cols?: number;
   layouts?: Breakpoint[];
@@ -74,6 +75,7 @@ const CarruselSimple = ({
           <ArrowRightWhiteIcon scale="1.2" />
         </button>
       }
+      {...args}
     >
       {children}
     </Carousel>
