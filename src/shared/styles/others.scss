@@ -1,0 +1,200 @@
+/* Definición de la fuente Udemy Sans */
+
+.ease-in-animation {
+  @apply transition duration-500 ease-in-out;
+}
+.gradient-dark {
+  position: relative;
+  display: inline-block;
+}
+
+.box {
+  position: absolute;
+
+  top: 30px;
+  height: 100%;
+}
+.z-navbar-top {
+  z-index: 30;
+}
+.z-navbar-bottom {
+  z-index: 30;
+}
+.z-purchase-course {
+  z-index: 40;
+}
+
+.wrapper .stickyf {
+  position: sticky;
+  top: 0;
+  right: 1px;
+}
+.gradient-dark::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(45, 47, 49, 0) 0%,
+    rgba(45, 47, 49, 0.9) 100%
+  );
+  z-index: 1;
+}
+
+.wrapper {
+  width: 100%;
+}
+/* links */
+.link-footer {
+}
+.link-footer:hover {
+  text-decoration: underline;
+}
+.ul-footer {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  padding-right: 2.4rem;
+}
+
+.footer-paddings {
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+  padding-bottom: 5rem;
+  padding-top: 2.4rem;
+}
+
+/* gradient show more */
+
+.collapsed-description {
+  max-height: 100px;
+}
+
+.full-description {
+  max-height: none; /* Muestra todo el contenido cuando se expande */
+}
+.show-more-gradient-white {
+  position: relative;
+  overflow: hidden;
+}
+
+.show-more-gradient-white::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Altura del gradiente de desvanecimiento */
+  background: linear-gradient(transparent, rgba(255, 255, 255, 0.9));
+}
+
+/* triangule  */
+.triangule::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent; /* La mitad del ancho deseado */
+  border-right: 7px solid transparent; /* La mitad del ancho deseado */
+  border-bottom: 8px solid #000; /* Altura deseada y color */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  left: 50%; /* Centramos horizontalmente */
+  transform: translateX(-50%); /* Corregimos la posición horizontal */
+}
+
+.button-carousel-left {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  width: 48px;
+  height: 48px;
+  border-radius: 99px;
+  margin: auto;
+  border: 1px solid #6a6f73;
+  background-color: #2c2d2f;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.button-carousel-right {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 99px;
+  margin: auto;
+  border: 1px solid #6a6f73;
+  background-color: #2c2d2f;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.center-btn-carrousel {
+  top: 50%;
+}
+.underline-line {
+  text-underline-offset: 0.4rem;
+  text-decoration: underline;
+}
+
+.image-hover {
+  position: relative;
+  display: inline-block;
+  transition: 0.3s all; /* Agrega la transición aquí */
+}
+.image-hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.1
+  ); /* Cambia la opacidad al pasar el cursor */
+
+  pointer-events: none; /* Para que no interfiera con los elementos en la imagen */
+  z-index: 1; /* Ajusta según sea necesario */
+}
+
+.MuiTooltip-arrow {
+}
+
+.MuiTooltip-arrow::before {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: "1px solid #d1d7dc";
+}
+
+.hidden-part-logo {
+  position: relative;
+  transition: 0.2s all;
+}
+.hidden-part-logo:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 60%;
+  background-color: rgb(45 47 49);
+  left: 36px;
+  transition: 0.2s all;
+  z-index: 10;
+}

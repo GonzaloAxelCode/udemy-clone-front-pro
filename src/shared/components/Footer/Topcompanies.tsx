@@ -1,10 +1,10 @@
+import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import Title from "@/shared/UIComponents/Texts/Title";
-import Flex from "@/shared/UIComponents/Wrappers/Flex";
 
 const Topcompanies = () => {
   return (
     <Flex className="bg-darkfull hr-bottom-dark px-5 py-5">
-      <Flex full between noItemsCenter className="flex-wrap">
+      <Flex full between noitemscenter className="flex-wrap">
         <Title className="mt-3 mb-3 text-xl text-white">
           Top companies choose{" "}
           <span className="text-purplegray">Udemy Business</span> to build

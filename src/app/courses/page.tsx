@@ -1,5 +1,5 @@
 "use client";
-import Flex from "@/shared/UIComponents/Wrappers/Flex";
+import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import AllCoursest from "./components/AllCoursest";
 import CoursesToGetYouStarted from "./components/CoursesToGetYouStarted";
 import FeaturedCourse from "./components/FeaturedCourse";
@@ -12,7 +12,7 @@ const PageCourses = () => {
       <p className="text-4xl font-suisse-works leading-10 py-8">
         Hardware Courses
       </p>
-      <Flex full col noItemsCenter>
+      <Flex full col noitemscenter>
         <CoursesToGetYouStarted />
         <FeaturedCourse />
         <PopularInstructors />

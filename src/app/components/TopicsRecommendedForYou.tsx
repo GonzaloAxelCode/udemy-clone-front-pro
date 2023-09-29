@@ -1,13 +1,13 @@
 import CarruselSimple from "@/shared/UIComponents/Carrusels/CarruselSimple";
+import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import Title from "@/shared/UIComponents/Texts/Title";
-import Flex from "@/shared/UIComponents/Wrappers/Flex";
 import categorias from "@/shared/components/Navbar/_data_categories";
 
 import Carousel from "better-react-carousel";
 import Link from "next/link";
 const TopicsRecommendedForYou = () => {
   return (
-    <Flex col noItemsCenter>
+    <Flex col noitemscenter>
       <Title className=" mt-3 mb-1 text-2xl ">
         <span>Topics recommended for you</span>
       </Title>
@@ -18,7 +18,7 @@ const TopicsRecommendedForYou = () => {
               <Carousel.Item className="" key={index}>
                 <Flex
                   full
-                  justifyCenter
+                  justifycenter
                   className="w-[200px] h-[56px] hr-full font-bold hover:bg-gray-100"
                 >
                   <Link

@@ -3,7 +3,6 @@ import { cn } from "tailwind-cn";
 const Title = ({
   children,
   className = "",
-  size = "md",
 }: {
   className?: string;
   children: string | any;

@@ -1,4 +1,3 @@
-
 const PopularInstructors = () => {
   return <div>PopularInstructors</div>;
 };

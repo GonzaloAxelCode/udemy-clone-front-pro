@@ -1,7 +1,7 @@
 "use client";
 import Button from "@/shared/UIComponents/Buttons/Button";
-import Sidebar from "@/shared/UIComponents/Sidebars/Sidebar";
-import Flex from "@/shared/UIComponents/Wrappers/Flex";
+import Sidebar from "@/shared/UIComponents/Popovers/Sidebars/Sidebar";
+import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import ArrowLeftIcon from "@/shared/UIComponents/icons/ArrowLeftIcon";
 import LanguageIcon from "@/shared/UIComponents/icons/LanguageIcon";
 import Link from "next/link";
@@ -11,9 +11,9 @@ import UserImage from "../UserImage";
 const MenuPhone = () => {
   return (
     <Sidebar>
-      <Flex col noItemsCenter full>
+      <Flex col noitemscenter full>
         <Link href="#">
-          <Flex full justifyCenter className="bg-gray-100 space-x-1 p-4">
+          <Flex full justifycenter className="bg-gray-100 space-x-1 p-4">
             <UserImage className="w-16 h-16" />
             <span className="flex flex-grow">
               <span className="flex flex-col flex-grow text-dark-100 text-md font-bold">
@@ -29,7 +29,7 @@ const MenuPhone = () => {
             </Flex>
           </Flex>
         </Link>
-        <Flex justifyCenter full className=" py-3 px-3  ">
+        <Flex justifycenter full className=" py-3 px-3  ">
           <Link href="#" className="w-full text-purple-300 m-auto ">
             Switch to instructor view
           </Link>
@@ -37,7 +37,7 @@ const MenuPhone = () => {
         <Flex
           col
           full
-          noItemsCenter
+          noitemscenter
           className=" py-3 px-3 border-t-1	 border-solid border-t  border-gray-200"
         >
           <Link href="#" className="flex w-full flex-col">
@@ -49,11 +49,11 @@ const MenuPhone = () => {
         <Flex
           full
           col
-          noItemsCenter
+          noitemscenter
           className="py-3 px-3 border-t-1	 border-solid border-t  border-gray-200"
         >
           <span className="text-sm font-bold text-gray-300">Learn</span>
-          <Flex full col noItemsCenter>
+          <Flex full col noitemscenter>
             {categorias?.map((el: any, index: number) => {
               return (
                 <Link
@@ -73,7 +73,7 @@ const MenuPhone = () => {
 
         <Flex
           col
-          noItemsCenter
+          noitemscenter
           className="p-3 border-t-1	 border-solid border-t  border-gray-200"
         >
           <span className="text-sm font-bold text-gray-300">

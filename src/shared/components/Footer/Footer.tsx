@@ -1,5 +1,5 @@
 import Button from "@/shared/UIComponents/Buttons/Button";
-import Flex from "@/shared/UIComponents/Wrappers/Flex";
+import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import LanguageIconWhite from "@/shared/UIComponents/icons/LanguageIconWhite";
 import Logo from "@/shared/UIComponents/others/Logo";
 import Link from "next/link";
@@ -7,14 +7,17 @@ import Topcompanies from "./Topcompanies";
 
 const Footer = () => {
   return (
-    <div className="mt-14 text-white w-full">
+    <div
+      className="text-white w-full"
+      style={{ position: "relative", zIndex: 100 }}
+    >
       <Topcompanies />
       <div
         id="elementoReferencia"
         className="bg-darkfull w-full footer-paddings"
       >
-        <Flex full col noItemsCenter className="">
-          <Flex between noItemsCenter full className="flex-col md:flex-row">
+        <Flex full col noitemscenter className="">
+          <Flex between noitemscenter full className="flex-col md:flex-row">
             <ul className="ul-footer w-full">
               <li>
                 <a

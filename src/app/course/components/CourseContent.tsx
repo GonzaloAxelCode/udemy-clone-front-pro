@@ -1,18 +1,18 @@
 import AccordionGroup from "@/shared/UIComponents/Acordeon/AccordionGroup";
 import Acordeon from "@/shared/UIComponents/Acordeon/Acordeon";
+import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import Title from "@/shared/UIComponents/Texts/Title";
-import Flex from "@/shared/UIComponents/Wrappers/Flex";
 
 import ArrowDownIcon from "@/shared/UIComponents/icons/ArrowDownIcon";
 import VideoIcon from "@/shared/UIComponents/icons/VideoIcon";
+import temarioCursoReact from "@/shared/data/_temario_courses";
 import Link from "next/link";
 import { cn } from "tailwind-cn";
-import temarioCursoReact from "./_temario_courses";
 
 const CourseContent = () => {
   return (
     <Flex className="w-full py-4">
-      <Flex className="w-full" col noItemsCenter>
+      <Flex className="w-full" col noitemscenter>
         <Title className="mt-3 mb-2 text-2xl ">Course content </Title>
 
         <Flex between className="w-full my-2">

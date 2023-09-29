@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "Udemy Sans";
+  font-style: normal;
+  font-weight: 400; /* Para coincidir con el token @font-weight-normal */
+  font-display: fallback;
+  src: local("Udemy Sans Regular"), local("UdemySans-Regular"),
+    url("https://www.udemy.com/staticx/udemy/fonts/Udemy-Sans-Regular-v1.woff2")
+      format("woff2");
+}
+
+@font-face {
+  font-family: "Udemy Sans";
+  font-style: normal;
+  font-weight: 700; /* Para coincidir con el token @font-weight-bold */
+  font-display: fallback;
+  src: local("Udemy Sans Bold"), local("UdemySans-Bold"),
+    url("https://www.udemy.com/staticx/udemy/fonts/Udemy-Sans-Bold-v1.woff2")
+      format("woff2");
+}
+
+/* Definición de la fuente Theinhardt Mono */
+@font-face {
+  font-family: "Theinhardt Mono";
+  font-display: fallback;
+  src: local("Theinhardt Mono Regular"), local("TheinhardtMono-Regular"),
+    url("https://www.udemy.com/staticx/udemy/fonts/Theinhardt-Mono-Regular-v2.woff2")
+      format("woff2");
+}
+
+/* Definición de la fuente SuisseWorks */
+@font-face {
+  font-family: "SuisseWorks";
+  font-style: normal;
+  font-weight: 700; /* Para coincidir con el token @font-weight-bold */
+  font-display: fallback;
+  src: local("SuisseWorks Bold"), local("SuisseWorks-Bold"),
+    url("https://www.udemy.com/staticx/udemy/fonts/SuisseWorks-Bold-v1.woff2")
+      format("woff2");
+}

@@ -1,32 +1,31 @@
 import Button from "@/shared/UIComponents/Buttons/Button";
+import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import Title from "@/shared/UIComponents/Texts/Title";
-import Flex from "@/shared/UIComponents/Wrappers/Flex";
 import HeartIcon from "@/shared/UIComponents/icons/HeartIcon";
-//@ts-ignore
-import ReactStars from "react-stars";
 
 import PeopleIcon from "@/shared/UIComponents/icons/PeopleIcon";
 import HighestRated from "@/shared/UIComponents/others/HighestRated";
-import _bought_courses from "./_boughtcourses";
+import _bought_courses from "@/shared/data/_boughtcourses";
+import ReactStars2 from "@/shared/lib/react-stars";
 const StudentsAlsoBought = () => {
   return (
     <Flex>
-      <Flex full col noItemsCenter>
+      <Flex full col noitemscenter>
         <Title className="mt-3 mb-2 text-2xl ">Students also bought </Title>
-        <Flex col noItemsCenter full>
+        <Flex col noitemscenter full>
           {_bought_courses.map((el: any, index: number) => {
             return (
               <Flex
                 key={index}
                 full
-                noItemsCenter
+                noitemscenter
                 between
                 className="justify-between py-4 hr-bottom"
               >
                 <Flex w-full className="mr-2">
                   <img src={el.image} width={64} height={64} />
                 </Flex>
-                <Flex full col noItemsCenter between className="max-w-[50%]">
+                <Flex full col noitemscenter between className="max-w-[50%]">
                   <span className="text-md font-bold text-dark-100  leading-4 ">
                     {el.title}
                   </span>
@@ -53,7 +52,7 @@ const StudentsAlsoBought = () => {
                       {el.raiting}
                     </span>
                     <span>
-                      <ReactStars
+                      <ReactStars2
                         count={1}
                         size={20}
                         char="★"

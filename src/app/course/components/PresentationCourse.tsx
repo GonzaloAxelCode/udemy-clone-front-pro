@@ -1,17 +1,16 @@
+import Breadcrumb from "@/shared/UIComponents/Breadcrumb";
 import Button from "@/shared/UIComponents/Buttons/Button";
+import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import LinkUnder from "@/shared/UIComponents/Links/LinkUnder";
 import Title from "@/shared/UIComponents/Texts/Title";
-import Flex from "@/shared/UIComponents/Wrappers/Flex";
 import HeartWhite from "@/shared/UIComponents/icons/HeartWhite";
 import LanguageIconWhite from "@/shared/UIComponents/icons/LanguageIconWhite";
 import PlayIcon from "@/shared/UIComponents/icons/PlayIcon";
 import SubtitleIcon from "@/shared/UIComponents/icons/SubtitleIcon";
 import UpdateDateIcon from "@/shared/UIComponents/icons/UpdateDateIcon";
 import HighestRated from "@/shared/UIComponents/others/HighestRated";
-import Breadcrumb from "@/shared/components/Breadcrumb";
+import ReactStars2 from "@/shared/lib/react-stars";
 import Link from "next/link";
-//@ts-ignore
-import ReactStars from "react-stars";
 
 import { cn } from "tailwind-cn";
 
@@ -20,14 +19,14 @@ const PresentationCourse = () => {
     <Flex className="bg-dark-100 py-8 w-full ">
       <Flex
         col
-        noItemsCenter
-        justifyCenter
+        noitemscenter
+        justifycenter
         className="flex-end m-auto text-white lg:max-w-[700px] max-w-[600px]"
       >
         <Breadcrumb />
         <Flex>
           <Link href="#" className={cn("lg:hidden relative z-1 py-3")}>
-            <Flex justifyCenter>
+            <Flex justifycenter>
               <div className="flex flex-col gradient-dark">
                 <img
                   src="https://img-c.udemycdn.com/course/750x422/543600_64d1_4.jpg"
@@ -58,7 +57,7 @@ const PresentationCourse = () => {
           Aprende React: Hooks, State, MERN, Next.js, Remix Run, Redux, Tailwind
           CSS, Prisma y mucho más - CREANDO +15 APPS REALES
         </p>
-        <Flex noItemsCenter className="space-x-2 items-center">
+        <Flex noitemscenter className="space-x-2 items-center">
           <Link href="#" className="flex space-x-2 items-center">
             <HighestRated />
             <Flex className="space-x-1">
@@ -66,7 +65,7 @@ const PresentationCourse = () => {
                 4.8
               </span>
               <span>
-                <ReactStars
+                <ReactStars2
                   count={5}
                   size="15px"
                   char="★"
@@ -120,8 +119,8 @@ export default PresentationCourse;
 
 function BoxPrices() {
   return (
-    <Flex full col noItemsCenter>
-      <Flex col noItemsCenter className="w-full">
+    <Flex full col noitemscenter>
+      <Flex col noitemscenter className="w-full">
         <Title className="mb-3">S/249.90</Title>
 
         <Flex className="w-full space-x-2 mt-2">
@@ -137,7 +136,7 @@ function BoxPrices() {
           30-Day Money-Back Guarantee
         </span>
       </Flex>
-      <Flex className="space-x-2 flex-grow my-3" full justifyCenter>
+      <Flex className="space-x-2 flex-grow my-3" full justifycenter>
         <LinkUnder href="#share">Share</LinkUnder>
         <LinkUnder href="#gift">Gift this course</LinkUnder>
         <LinkUnder href="#coupon">Apply Coupon</LinkUnder>

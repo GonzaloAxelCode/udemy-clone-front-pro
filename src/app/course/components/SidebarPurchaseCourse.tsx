@@ -1,7 +1,7 @@
 import Button from "@/shared/UIComponents/Buttons/Button";
+import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import LinkUnder from "@/shared/UIComponents/Links/LinkUnder";
 import Title from "@/shared/UIComponents/Texts/Title";
-import Flex from "@/shared/UIComponents/Wrappers/Flex";
 import CoupIcon from "@/shared/UIComponents/icons/CoupIcon";
 import DocIcon from "@/shared/UIComponents/icons/DocIcon";
 import HeartIcon from "@/shared/UIComponents/icons/HeartIcon";
@@ -19,7 +19,7 @@ const SidebarPurchaseCourse = ({ extraClassNames = "" }) => {
     <div className="bg-white">
       <Flex
         col
-        noItemsCenter
+        noitemscenter
         className={cn("w-[340px] relative", extraClassNames)}
       >
         <Link
@@ -30,7 +30,7 @@ const SidebarPurchaseCourse = ({ extraClassNames = "" }) => {
           href="#"
           className={cn(scrollY >= 300 && "hidden")}
         >
-          <Flex justifyCenter>
+          <Flex justifycenter>
             <div className="flex flex-col gradient-dark">
               <img
                 src="https://img-c.udemycdn.com/course/750x422/543600_64d1_4.jpg"
@@ -52,7 +52,7 @@ const SidebarPurchaseCourse = ({ extraClassNames = "" }) => {
 
         <Flex
           col
-          noItemsCenter
+          noitemscenter
           className="w-full p-5 border-solid border-1 border-gray-200 shadow-md"
         >
           <Title className="mb-3">S/249.90</Title>
@@ -75,9 +75,9 @@ const SidebarPurchaseCourse = ({ extraClassNames = "" }) => {
             30-Day Money-Back Guarantee
           </span>
 
-          <Flex col noItemsCenter full>
+          <Flex col noitemscenter full>
             <p className="font-bold text-md mb-3">This course includes</p>
-            <Flex col noItemsCenter full>
+            <Flex col noitemscenter full>
               <Flex className="w-full">
                 <VideoIcon scale="0.7" />
                 <span className="text-sm ml-3 py-1 text-gray-400">
@@ -116,7 +116,7 @@ const SidebarPurchaseCourse = ({ extraClassNames = "" }) => {
               <Flex
                 className="space-x-2 flex-grow my-5 mb-7"
                 full
-                justifyCenter
+                justifycenter
               >
                 <LinkUnder href="#share">Share</LinkUnder>
                 <LinkUnder href="#gift">Gift this course</LinkUnder>
@@ -125,7 +125,7 @@ const SidebarPurchaseCourse = ({ extraClassNames = "" }) => {
             </Flex>
           </Flex>
 
-          <Flex col noItemsCenter className="space-y-2 pt-3  bg-white hr-top">
+          <Flex col noitemscenter className="space-y-2 pt-3  bg-white hr-top">
             <p className="text-lg  font-bold">Training 5 or more people?</p>
             <span className="text-sm text-gray-400">
               Get your team access to 22,000+ top Udemy courses anytime,

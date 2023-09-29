@@ -1,5 +1,5 @@
 "use client";
-import Flex from "@/shared/UIComponents/Wrappers/Flex";
+import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import useScrollY from "@/shared/hooks/useScrollY";
 import React from "react";
 import { cn } from "tailwind-cn";
@@ -9,8 +9,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   const scrollY = useScrollY();
   return (
     <section className="relative w-full">
-      <div className="wrapper w-full">
-        <Flex full col noItemsCenter>
+      <div className="w-full">
+        <Flex full col noitemscenter>
           {children}
         </Flex>
 

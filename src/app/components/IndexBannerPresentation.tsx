@@ -1,4 +1,4 @@
-import Flex from "@/shared/UIComponents/Wrappers/Flex";
+import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 
 const IndexBannerPresentation = () => {
   return (
@@ -13,9 +13,9 @@ const IndexBannerPresentation = () => {
           src="https://img-c.udemycdn.com/notices/featured_carousel_slide/image/ed5bb7b8-25e7-481a-b6e8-0074a6dfcb28.png"
         />
         <Flex
-          maxScreen={700}
+          maxscreen={700}
           col
-          noItemsCenter
+          noitemscenter
           style={{
             position: "absolute",
             top: "12%",
@@ -36,12 +36,7 @@ const IndexBannerPresentation = () => {
         </Flex>
       </Flex>
 
-      <Flex
-        minScreen={700}
-        col
-        noItemsCenter
-        className="bg-white  w-full p-6"
-      >
+      <Flex minscreen={700} col noitemscenter className="bg-white  w-full p-6">
         <div className="mr-12">
           <p className="text-2xl font-suisse-works leading-10">
             Adelante, adelante

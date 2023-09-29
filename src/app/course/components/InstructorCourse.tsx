@@ -1,5 +1,5 @@
+import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import Title from "@/shared/UIComponents/Texts/Title";
-import Flex from "@/shared/UIComponents/Wrappers/Flex";
 import Medalcon from "@/shared/UIComponents/icons/Medalcon";
 import PeopleIcon from "@/shared/UIComponents/icons/PeopleIcon";
 import PlayIconDark from "@/shared/UIComponents/icons/PlayIconDark";
@@ -8,9 +8,9 @@ import Link from "next/link";
 
 const InstructorCourse = () => {
   return (
-    <Flex full col noItemsCenter>
+    <Flex full col noitemscenter>
       <Title className="mt-3 mb-3 text-2xl  ">Instructor</Title>
-      <Flex col full noItemsCenter>
+      <Flex col full noitemscenter>
         <Link
           className=" text-xl text-linkpurple underline"
           style={{
@@ -31,7 +31,7 @@ const InstructorCourse = () => {
             className="w-[112px] h-[112px] rounded-full mr-3"
           />
 
-          <Flex col noItemsCenter full>
+          <Flex col noitemscenter full>
             <Flex className="w-full">
               <StarIcon scale="0.7" />
               <span className="text-sm ml-3 py-1 text-gray-400">
@@ -62,7 +62,7 @@ const InstructorCourse = () => {
           </Flex>
         </Flex>
 
-        <Flex col noItemsCenter className="py-3">
+        <Flex col noitemscenter className="py-3">
           <p className="text-sm">
             In this course, youll learn how to create your own Slide Styles,
             Transitions and Templates in ProShow Producer 7. Youll learn how to

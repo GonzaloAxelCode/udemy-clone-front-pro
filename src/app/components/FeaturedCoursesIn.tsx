@@ -1,8 +1,5 @@
-
 const FeaturedCoursesIn = () => {
-  return (
-    <div>FeaturedCoursesIn</div>
-  )
-}
+  return <div>FeaturedCoursesIn</div>;
+};
 
-export default FeaturedCoursesIn
+export default FeaturedCoursesIn;

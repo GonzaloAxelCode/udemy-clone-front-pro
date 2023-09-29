@@ -1,0 +1,45 @@
+.shadow-top {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.shadow-top-dark {
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.08), 0 -4px 12px rgba(0, 0, 0, 0.16);
+}
+
+.line-h {
+  line-height: 1.4rem;
+}
+
+.hr-bottom {
+  border-bottom: 1px solid #d1d7dc;
+}
+.hr-bottom-dark {
+  border-bottom: 1px solid #3e4143;
+}
+
+.hr-left {
+  border-left: 1px solid #d1d7dc;
+}
+.hr-left-dark {
+  border-left: 1px solid #3e4143;
+}
+
+.hr-right {
+  border-right: 1px solid #d1d7dc;
+}
+.hr-right-dark {
+  border-right: 1px solid #3e4143;
+}
+
+.hr-top {
+  border-top: 1px solid #d1d7dc;
+}
+.hr-top-dark {
+  border-top: 1px solid #3e4143;
+}
+
+.hr-full {
+  border: 1px solid #d1d7dc;
+}
+.hr-full-dark {
+  border: 1px solid #3e4143;
+}

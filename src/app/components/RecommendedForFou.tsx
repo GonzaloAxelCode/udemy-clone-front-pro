@@ -1,13 +1,13 @@
 import CarruselSimple from "@/shared/UIComponents/Carrusels/CarruselSimple";
+import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import Title from "@/shared/UIComponents/Texts/Title";
-import Flex from "@/shared/UIComponents/Wrappers/Flex";
 import CardCourse from "@/shared/components/CardsCourse/CardCourse";
 import Carousel from "better-react-carousel";
 
-import __courses from "@/app/components/__courses";
+import __courses from "@/shared/data/__courses";
 const RecommendedForFou = () => {
   return (
-    <Flex col noItemsCenter>
+    <Flex col noitemscenter>
       <Title className=" mt-3 mb-1 text-2xl ">
         <span> Recommended for you </span>
       </Title>

@@ -1,8 +1,7 @@
 "use client";
 import Button from "@/shared/UIComponents/Buttons/Button";
-import SearchInput from "@/shared/UIComponents/Inputs/SearchInput";
-import Flex from "@/shared/UIComponents/Wrappers/Flex";
-import WrapperNabvar from "@/shared/UIComponents/Wrappers/NavbarWrapper";
+import Flex from "@/shared/UIComponents/CustomHTML/Flex";
+import PopoverTooltip from "@/shared/UIComponents/Popovers/PopoverTooltip";
 import CartIcon from "@/shared/UIComponents/icons/CartIcon";
 import HeartIcon from "@/shared/UIComponents/icons/HeartIcon";
 import LanguageIcon from "@/shared/UIComponents/icons/LanguageIcon";
@@ -11,31 +10,48 @@ import SearchIcon from "@/shared/UIComponents/icons/SearchIcon";
 import ThreeLinesIcon from "@/shared/UIComponents/icons/ThreeLinesIcon";
 import Dialog from "@/shared/UIComponents/others/Dialog";
 import Logo from "@/shared/UIComponents/others/Logo";
+import SearchInput from "@/shared/components/Inputs/SearchInput";
 import { useUIContext } from "@/shared/hooks";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import styled from "styled-components";
 import UserImage from "../UserImage";
 import ItemNavDialog from "./ItemNavDialog";
 import MenuCategories from "./MenuCategories";
 import SubNavCategories from "./SubNavCategories";
+
+const WrapperNabvar = styled.div`
+  background: white;
+  display: flex;
+
+  padding-left: 1.3rem; /* pl-6 */
+  padding-right: 1.3rem; /* pr-6 */
+  width: 100%; /* w-full */
+
+  z-index: 100;
+  position: relative;
+  padding-top: 0.68rem;
+  padding-bottom: 0.68rem;
+`;
+
 const Navbar = () => {
   const pathname = usePathname();
   console.log(pathname);
 
-  const isAuth = false;
+  const isAuth = true;
   const { setOpenMenuNav, openMenuNav } = useUIContext();
   return (
     <Flex
       col
       full
-      noItemsCenter
+      noitemscenter
       style={{
         boxShadow:
           "0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08)",
       }}
     >
       <WrapperNabvar className="hr-bottom">
-        <Flex maxScreen={800} className="flex-grow">
+        <Flex maxscreen={800} className="flex-grow">
           <Flex>
             <Link href="/">
               <Logo />
@@ -52,7 +68,7 @@ const Navbar = () => {
             <SearchInput />
           </Flex>
 
-          <Flex className="space-x-2 ">
+          <Flex className="space-x-5">
             <ItemNavDialog text="Udemy Business">
               <Dialog
                 className="-left-10 top-6"
@@ -101,52 +117,191 @@ const Navbar = () => {
             )}
 
             {isAuth && (
-              <ItemNavDialog text={<HeartIcon />}>
-                <Dialog
-                  className="-left-20 top-6"
-                  extraClassNames="w-[300px]  text-center"
-                >
-                  <Flex className="flex-col">
-                    <p className="text-md text-gray-300 pb-3">
-                      Your wishlist is empty.
+              <PopoverTooltip
+                arrow={false}
+                placement="bottom-start"
+                content={
+                  <Link href="#">
+                    <HeartIcon />
+                  </Link>
+                }
+              >
+                <Flex col className=" w-[288px] px-4 py-3">
+                  <p className="text-sm text-gray-300 text-center m-auto leading-5 ">
+                    Switch to the student view here.
+                  </p>
+                  <Link href="#" className="text-sm text-purple-400 font-bold">
+                    Explore courses
+                  </Link>
+                </Flex>
+              </PopoverTooltip>
+            )}
+
+            <PopoverTooltip
+              arrow={false}
+              placement="bottom-start"
+              content={
+                <Link href="#">
+                  <CartIcon />
+                </Link>
+              }
+            >
+              <Flex col className="w-[288px]  px-4 py-3">
+                <Flex between full className="pb-4">
+                  <p className="text-lg text-dark-100  font-bold ">Cart</p>
+                  <Link href="#" className="text-sm text-purple-400 font-bold">
+                    Settings
+                  </Link>
+                </Flex>
+                <p className="text-sm text-gray-300 text-center m-auto leading-5">
+                  Yout cart is empty.
+                </p>
+              </Flex>
+            </PopoverTooltip>
+
+            {isAuth && (
+              <PopoverTooltip
+                arrow={false}
+                placement="bottom-start"
+                content={
+                  <Link href="#">
+                    <NotiIcon />
+                  </Link>
+                }
+              >
+                <Flex col className="w-[288px]  px-4 py-3">
+                  <Flex between full className="pb-4">
+                    <p className="text-lg text-dark-100  font-bold ">
+                      Notifications
                     </p>
                     <Link
                       href="#"
                       className="text-sm text-purple-400 font-bold"
                     >
-                      Explore courses
+                      Settings
                     </Link>
                   </Flex>
-                </Dialog>
-              </ItemNavDialog>
-            )}
-
-            <ItemNavDialog text={<CartIcon />}>
-              <Dialog extraClassNames="w-[300px]  -left-20 text-center">
-                Your cart is empty.
-              </Dialog>
-            </ItemNavDialog>
-
-            {isAuth && (
-              <ItemNavDialog text={<NotiIcon />}>
-                <Dialog extraClassNames="w-[300px]  -left-30">
-                  Notifications
-                </Dialog>
-              </ItemNavDialog>
+                  <p className="text-sm text-gray-300 text-center m-auto leading-5">
+                    No notifications.
+                  </p>
+                </Flex>
+              </PopoverTooltip>
             )}
 
             {isAuth && (
-              <ItemNavDialog text={<UserImage />}>
-                <Dialog
-                  className=" -left-20"
-                  extraClassNames="w-[300px]  -left-20"
-                >
-                  <div>
-                    <UserImage />
-                    <p>gonzaloaxel@gmail.com</p>
-                  </div>
-                </Dialog>
-              </ItemNavDialog>
+              <PopoverTooltip
+                arrow={false}
+                placement="bottom-start"
+                content={
+                  <Link href="#">
+                    <UserImage className="w-[32px] h-[32px]" />
+                  </Link>
+                }
+              >
+                <Flex className="text-dark-100  w-[260px]">
+                  <Flex col noitemscenter full>
+                    <Link href="#" className="p-4">
+                      <Flex full justifycenter className=" space-x-3 ">
+                        <UserImage className="w-[64px] h-[64px]" />
+
+                        <Flex col noitemscenter justifycenter>
+                          <span
+                            style={{
+                              fontSize: "1rem",
+                            }}
+                            className="text-dark-100 hover:text-purple-300 font-bold"
+                          >
+                            Gonzalo Axel
+                          </span>
+
+                          <span
+                            style={{
+                              fontSize: "0.75rem",
+                            }}
+                            className="font-normal text-gray-300"
+                          >
+                            gonzaloaxelh@gmail.com
+                          </span>
+                        </Flex>
+                      </Flex>
+                    </Link>
+                    <Flex justifycenter full className="hr-top">
+                      <Link
+                        href="#"
+                        className="text-sm  p-4 pl-3  w-full  text-gray-300 hover:text-purple-300 m-auto "
+                      >
+                        Student
+                      </Link>
+                    </Flex>
+                    <Flex justifycenter full className="hr-top">
+                      <Link
+                        href="#"
+                        className="text-sm p-4 pl-3 w-full  text-gray-300 hover:text-purple-300 m-auto "
+                      >
+                        Notifications
+                      </Link>
+                    </Flex>
+                    <Flex col justifycenter full className="hr-top">
+                      <Link
+                        href="#"
+                        className="text-sm  p-4 pl-3  w-full  text-gray-300 hover:text-purple-300 m-auto "
+                      >
+                        Acount Settings
+                      </Link>
+                      <Link
+                        href="#"
+                        className="text-sm  pt-0 p-4 pl-3  w-full  text-gray-300 hover:text-purple-300 m-auto "
+                      >
+                        Payout & Tax settings
+                      </Link>
+                    </Flex>
+                    <Flex col justifycenter full className="hr-top">
+                      <Link
+                        href="#"
+                        className="text-sm  p-4 pl-3  w-full  text-gray-300 hover:text-purple-300 m-auto "
+                      >
+                        Public profile
+                      </Link>
+                      <Link
+                        href="#"
+                        className="text-sm pt-0 p-4 pl-3  w-full  text-gray-300 hover:text-purple-300 m-auto "
+                      >
+                        Edit profile
+                      </Link>
+                    </Flex>
+                    <Flex col justifycenter full className="hr-top">
+                      <Link
+                        href="#"
+                        className="text-sm  p-4 pl-3  w-full  text-gray-300 hover:text-purple-300 m-auto "
+                      >
+                        Help
+                      </Link>
+                      <Link
+                        href="#"
+                        className="text-sm  pt-0 p-4 pl-3  w-full  text-gray-300 hover:text-purple-300 m-auto "
+                      >
+                        Log out
+                      </Link>
+                    </Flex>
+                    <Flex col justifycenter full className="hr-top">
+                      <Link
+                        href="#"
+                        className="text-sm  p-4 pl-3  w-full  text-gray-300  m-auto "
+                      >
+                        <p
+                          style={{
+                            fontSize: "1rem",
+                          }}
+                          className="font-bold text-lg text-dark-100 "
+                        >
+                          Udemy Business
+                        </p>
+                        <p className="text-sm">Bring learning to yur company</p>
+                      </Link>
+                    </Flex>
+                  </Flex>
+                </Flex>
+              </PopoverTooltip>
             )}
 
             {!isAuth && <Button variant="primary">Log In</Button>}
@@ -159,7 +314,7 @@ const Navbar = () => {
           </Flex>
         </Flex>
 
-        <Flex minScreen={800} className="flex-grow">
+        <Flex minscreen={800} className="flex-grow">
           <Link
             onClick={() => setOpenMenuNav(true)}
             className="flex items-center"

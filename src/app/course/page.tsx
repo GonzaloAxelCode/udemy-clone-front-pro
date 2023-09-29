@@ -1,6 +1,5 @@
 "use client";
-import Flex from "@/shared/UIComponents/Wrappers/Flex";
-import WrapperSection from "@/shared/UIComponents/Wrappers/WrapperSection";
+import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import CourseContent from "./components/CourseContent";
 import CourseRatingReviews from "./components/CourseRatingReviews";
 import CurseBottomFixed from "./components/CurseBottomFixed";
@@ -17,21 +16,28 @@ import WhatYouLearn from "./components/WhatYouLearn";
 
 const CoursePage = () => {
   return (
-    <Flex col noItemsCenter full className="relative">
+    <Flex col noitemscenter full className="relative">
       <CurseTopFixed />
       <PresentationCourse />
-      <WrapperSection>
-        <WhatYouLearn />
-        <CourseContent />
-        <RequerimentsCourse />
-        <DescriptionCourse />
-        <FeaturedReview />
-        <StudentsAlsoBought />
-        <FrequentlyBoughtTogether />
-        <InstructorCourse />
-        <CourseRatingReviews />
-        <MoreCoursesBy />
-      </WrapperSection>
+
+      <Flex full noitemscenter className="py-10">
+        <Flex className="flex-start m-auto lg:max-w-[670px] max-w-[600px]">
+          <Flex col noitemscenter>
+            <WhatYouLearn />
+            <CourseContent />
+            <RequerimentsCourse />
+            <DescriptionCourse />
+            <FeaturedReview />
+            <StudentsAlsoBought />
+            <FrequentlyBoughtTogether />
+            <InstructorCourse />
+            <CourseRatingReviews />
+            <MoreCoursesBy />
+          </Flex>
+        </Flex>
+        <Flex className=" lg:w-[380px] lg:w-[0px]"></Flex>
+      </Flex>
+
       <CurseBottomFixed />
     </Flex>
   );

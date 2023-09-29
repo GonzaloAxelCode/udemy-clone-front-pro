@@ -4,7 +4,7 @@ const UserImage = ({ className = "", inicial = "G" }: any) => {
   return (
     <div
       className={cn(
-        "bg-dark-100 flex items-center justify-center rounded-full",
+        "bg-dark-100 flex items-center justify-center rounded-full w-[32px] h-[32px]",
         className
       )}
     >

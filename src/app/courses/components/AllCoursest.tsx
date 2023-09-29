@@ -1,4 +1,3 @@
-
 const AllCoursest = () => {
   return <div>AllCoursest</div>;
 };

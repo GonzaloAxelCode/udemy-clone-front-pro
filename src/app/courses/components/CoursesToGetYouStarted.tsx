@@ -1,10 +1,10 @@
 "use client";
-import __courses from "@/app/components/__courses";
 import CarruselSimple from "@/shared/UIComponents/Carrusels/CarruselSimple";
-import Flex from "@/shared/UIComponents/Wrappers/Flex";
+import Flex from "@/shared/UIComponents/CustomHTML/Flex";
+import TabGroup from "@/shared/UIComponents/Tabs/TabGroup";
+import TabItem from "@/shared/UIComponents/Tabs/TabItem";
 import CardCourse from "@/shared/components/CardsCourse/CardCourse";
-import TabGroup from "@/shared/components/Tabs/TabGroup";
-import TabItem from "@/shared/components/Tabs/TabItem";
+import __courses from "@/shared/data/__courses";
 import Carousel from "better-react-carousel";
 
 const CoursesToGetYouStarted = () => {

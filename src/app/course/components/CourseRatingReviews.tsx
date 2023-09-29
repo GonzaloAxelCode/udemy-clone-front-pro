@@ -1,19 +1,19 @@
 import Button from "@/shared/UIComponents/Buttons/Button";
+import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import Title from "@/shared/UIComponents/Texts/Title";
-import Flex from "@/shared/UIComponents/Wrappers/Flex";
 import PointIcon from "@/shared/UIComponents/icons/PointIcon";
 
 import DislikeIcon from "@/shared/UIComponents/icons/DislikeIcon";
 import ElipsisIcon from "@/shared/UIComponents/icons/ElipsisIcon";
 import LikeIcon from "@/shared/UIComponents/icons/LikeIcon";
 import UserImage from "@/shared/components/UserImage";
-import _reviews_data from "./_reviews_data";
+import _reviews_data from "@/shared/data/_reviews_data";
+import ReactStars2 from "@/shared/lib/react-stars";
 //dasd
-//@ts-ignore
-import ReactStars from "react-stars";
+
 const CourseRatingReviews = () => {
   return (
-    <Flex col noItemsCenter>
+    <Flex col noitemscenter>
       <Title className=" flex items-center mt-3 mb-8 text-2xl ">
         <span className="text-orange-400 mr-2">★</span>
         <span>4.6 course rating</span>
@@ -22,28 +22,28 @@ const CourseRatingReviews = () => {
         </span>
         <span>191K ratings</span>
       </Title>
-      <Flex noItemsCenter full between className="flex-wrap">
+      <Flex noitemscenter full between className="flex-wrap">
         {_reviews_data.map((el: any, index: number) => {
           return (
             <Flex
               className="w-[46%] pt-6 pb-8 hr-top"
               col
-              noItemsCenter
+              noitemscenter
               key={index}
             >
-              <Flex noItemsCenter full className="mb-5">
+              <Flex noitemscenter full className="mb-5">
                 <Flex full className="flex-grow">
                   <UserImage
                     inicial={el.iniciales}
                     className="w-[40px] h-[40px] mr-4"
                   />
-                  <Flex col noItemsCenter>
+                  <Flex col noitemscenter>
                     <span className="text-base font-bold ">
                       {el.fullnameShortLastname}
                       <Flex>
                         <Flex className="space-x-1 mr-3">
                           <span>
-                            <ReactStars
+                            <ReactStars2
                               count={5}
                               size="15px"
                               char="★"
@@ -60,11 +60,11 @@ const CourseRatingReviews = () => {
                     </span>
                   </Flex>
                 </Flex>
-                <Flex justifyCenter>
+                <Flex justifycenter>
                   <ElipsisIcon />
                 </Flex>
               </Flex>
-              <Flex col noItemsCenter full>
+              <Flex col noitemscenter full>
                 <p className="text-base text-gray-500 mb-6 line-p">
                   {el.description}
                 </p>

@@ -1,5 +1,5 @@
-import Flex from "@/shared/UIComponents/Wrappers/Flex";
-import ReactStars from "@/shared/lib/react-stars";
+import Flex from "@/shared/UIComponents/CustomHTML/Flex";
+import ReactStars2 from "@/shared/lib/react-stars";
 import Link from "next/link";
 import { useState } from "react";
 import { cn } from "tailwind-cn";
@@ -53,7 +53,7 @@ const CardCourse = ({
     <CourseInfoPopover course={course}>
       <Flex
         key={id}
-        noItemsCenter
+        noitemscenter
         between
         col
         full
@@ -65,20 +65,20 @@ const CardCourse = ({
           <img src={image} className="w-full hr-full" />
         </div>
 
-        <Flex full col noItemsCenter between>
+        <Flex full col noitemscenter between>
           <span className="text-md font-bold text-dark-100 mt-3 leading-4 ">
             {title}
           </span>
           <span className="text-xs text-gray-300">{author}</span>
 
-          <Flex col noItemsCenter className="space-x-2 items-center">
+          <Flex col noitemscenter className="space-x-2 items-center">
             <Link href="#" className="flex space-x-2 items-center">
               <Flex className="space-x-1">
                 <span className="text-orange-500 font-bold text-sm mt-1">
                   4.8
                 </span>
                 <span>
-                  <ReactStars
+                  <ReactStars2
                     count={5}
                     size="15px"
                     char="★"

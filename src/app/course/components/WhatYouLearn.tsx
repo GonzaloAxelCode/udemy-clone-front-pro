@@ -1,5 +1,5 @@
+import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import Title from "@/shared/UIComponents/Texts/Title";
-import Flex from "@/shared/UIComponents/Wrappers/Flex";
 import CheckIcon from "@/shared/UIComponents/icons/CheckIcon";
 const listaLearn = [
   { text: "What a target market is and what it means for your business" },
@@ -21,12 +21,12 @@ const WhatYouLearn = () => {
   return (
     <Flex
       col
-      noItemsCenter
+      noitemscenter
       className="m-auto w-full p-4 border-solid border-1 border-gray-200 "
     >
       <Title className="text-2xl px-2 py-3">What youll learn</Title>
-      <Flex noItemsCenter>
-        <Flex col noItemsCenter>
+      <Flex noitemscenter>
+        <Flex col noitemscenter>
           {listaLearn.slice(0, 5).map((el: any, index: number) => {
             return (
               <div key={index} className="space-x-3 flex py-1">
@@ -40,7 +40,7 @@ const WhatYouLearn = () => {
             );
           })}
         </Flex>
-        <Flex col noItemsCenter>
+        <Flex col noitemscenter>
           {listaLearn.slice(5).map((el: any, index: number) => {
             return (
               <div key={index} className="space-x-3 flex py-1">

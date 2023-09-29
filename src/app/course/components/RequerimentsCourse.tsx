@@ -1,5 +1,5 @@
+import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import Title from "@/shared/UIComponents/Texts/Title";
-import Flex from "@/shared/UIComponents/Wrappers/Flex";
 
 const _requeriments = [
   {
@@ -12,7 +12,7 @@ const _requeriments = [
 
 const RequerimentsCourse = () => {
   return (
-    <Flex col noItemsCenter className="mb-4">
+    <Flex col noitemscenter className="mb-4">
       <Title className="mt-3 mb-2 text-2xl ">Requirements</Title>
       <ul className="list-disc ml-5">
         {_requeriments.map((el: any, index: number) => {

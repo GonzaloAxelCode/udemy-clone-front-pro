@@ -1,11 +1,11 @@
 import Button from "@/shared/UIComponents/Buttons/Button";
-import Flex from "@/shared/UIComponents/Wrappers/Flex";
+import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 
 const TrainingPeople = () => {
   return (
     <Flex
-      maxScreen={700}
-      cssMax="flex-direction:column;"
+      maxscreen={700}
+      cssmax="flex-direction:column;"
       between
       full
       className="bg-gray-500  p-6 space-x-3"

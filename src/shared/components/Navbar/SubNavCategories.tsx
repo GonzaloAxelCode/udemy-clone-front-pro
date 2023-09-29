@@ -1,4 +1,4 @@
-import Flex from "@/shared/UIComponents/Wrappers/Flex";
+import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import Link from "next/link";
 
 import { useState } from "react";
@@ -13,21 +13,21 @@ const SubNavCategories = () => {
 
   return (
     <Flex
-      maxScreen={800}
+      maxscreen={800}
       col
       full
       style={{
         boxShadow:
           "0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08)",
       }}
-      justifyCenter
+      justifycenter
       className="relative"
       onMouseLeave={() => {
         setIsHover(false);
         setHoverDataCategory([]);
       }}
     >
-      <Flex full justifyCenter className="m-auto ">
+      <Flex full justifycenter className="m-auto ">
         <ul className="flex w-full justify-center space-x-0">
           {data_categories.slice(0, 8).map((el: any, index: number) => {
             return (
@@ -65,7 +65,7 @@ const SubNavCategories = () => {
           zIndex: 10,
         }}
         className=" bg-dark-100"
-        justifyCenter
+        justifycenter
         full
       >
         <ul className="flex w-full justify-center space-x-0">

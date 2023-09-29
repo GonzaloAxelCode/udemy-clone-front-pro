@@ -1,7 +1,7 @@
 "use client";
 import Button from "@/shared/UIComponents/Buttons/Button";
-import Input from "@/shared/UIComponents/Inputs/Input.styled";
-import InputPassword from "@/shared/UIComponents/Inputs/InputPassword";
+import InputPassword from "@/shared/components/Inputs/InputPassword";
+import Input from "@/shared/components/Inputs/InputText";
 import { useState } from "react";
 import InlineError from "../../UIComponents/others/InlineError";
 import Space from "../../UIComponents/others/Space";

@@ -1,12 +1,10 @@
 "use client";
-import Footer from "@/shared/components/Footer/Footer";
-import MenuPhone from "@/shared/components/MenuPhone/MenuPhone";
-import Navbar from "@/shared/components/Navbar/Navbar";
+import LayoutInstructor from "@/shared/components-instructor/Layouts/LayoutInstructor";
+import LayoutIndex from "@/shared/components/Layouts/LayoutIndex";
+import "@/shared/styles/index.scss";
+import "@smastrom/react-rating/style.css";
 import type { Metadata } from "next";
-import "rc-tooltip/assets/bootstrap_white.css";
-import "../shared/styles/carbon.scss";
-import "./globals.css";
-import Providers from "./providers";
+import { usePathname } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Clean Architecture",
@@ -18,16 +16,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html lang="es">
-      <Providers>
-        <body className="relative">
-          <Navbar />
-          <MenuPhone />
-          <div>{children}</div>
-          <Footer />
-        </body>
-      </Providers>
-    </html>
-  );
+  const path = usePathname();
+
+  if (path.startsWith("/instructor")) {
+    return <LayoutInstructor>{children}</LayoutInstructor>;
+  }
+
+  return <LayoutIndex>{children}</LayoutIndex>;
 }

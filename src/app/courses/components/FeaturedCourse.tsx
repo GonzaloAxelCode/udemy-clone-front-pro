@@ -1,6 +1,6 @@
-import Flex from "@/shared/UIComponents/Wrappers/Flex";
+import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import HighestRated from "@/shared/UIComponents/others/HighestRated";
-import ReactStars from "@/shared/lib/react-stars";
+import ReactStars2 from "@/shared/lib/react-stars";
 
 const _course = {
   id: 1,
@@ -27,10 +27,10 @@ const _course = {
 };
 const FeaturedCourse = () => {
   return (
-    <Flex noItemsCenter className="p-6 hr-full hover:bg-gray-100">
+    <Flex noitemscenter className="p-6 hr-full hover:bg-gray-100">
       <img src={_course.image} className="w-full mr-6" />
-      <Flex col noItemsCenter key={_course.id} between full>
-        <Flex full col noItemsCenter between>
+      <Flex col noitemscenter key={_course.id} between full>
+        <Flex full col noitemscenter between>
           <span className="text-2xl font-bold mb-2 leading-7 ">
             {_course.title}
           </span>
@@ -43,16 +43,7 @@ const FeaturedCourse = () => {
                 <span className="text-orange-500 font-bold text-sm mt-1">
                   4.8
                 </span>
-                <span>
-                  <ReactStars
-                    count={5}
-                    size="15px"
-                    char="★"
-                    edit={false}
-                    color1={"#b4690e"}
-                    color2={"#b4690e"}
-                  />
-                </span>
+                <ReactStars2 />
               </Flex>
               <span className="mr-2 text-xs text-gray-300">
                 {" "}

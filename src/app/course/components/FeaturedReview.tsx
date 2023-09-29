@@ -1,35 +1,34 @@
 import Button from "@/shared/UIComponents/Buttons/Button";
+import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import Title from "@/shared/UIComponents/Texts/Title";
-import Flex from "@/shared/UIComponents/Wrappers/Flex";
 import DislikeIcon from "@/shared/UIComponents/icons/DislikeIcon";
 import LikeIcon from "@/shared/UIComponents/icons/LikeIcon";
+import ReactStars2 from "@/shared/lib/react-stars";
 import Link from "next/link";
-//@ts-ignore
-import ReactStars from "react-stars";
 const FeaturedReview = () => {
   return (
-    <Flex col noItemsCenter className="p-6 hr-full mb-6 mt-6">
+    <Flex col noitemscenter className="p-6 hr-full mb-6 mt-6">
       <Title className="mb-3     text-2xl ">Featured review</Title>
 
-      <Flex col noItemsCenter>
+      <Flex col noitemscenter>
         <Flex w-full className="mr-2">
           <img
             src="https://img-b.udemycdn.com/user/200_H/496695_ce1e_2.jpg"
             className="mr-4 rounded-full  object-cover h-[64px] w-[64px]"
           />
 
-          <Flex col noItemsCenter>
+          <Flex col noitemscenter>
             <span className="text-base font-bold ">Adrián D.</span>
 
-            <Flex col noItemsCenter>
+            <Flex col noitemscenter>
               <span className="text-sm text-gray-400">333 courses</span>
               <span className="text-sm text-gray-400">15 reviews</span>
             </Flex>
           </Flex>
         </Flex>
-        <Flex col noItemsCenter className="space-x-1 mr-3">
+        <Flex col noitemscenter className="space-x-1 mr-3">
           <Flex>
-            <ReactStars
+            <ReactStars2
               count={5}
               size={23}
               char="★"

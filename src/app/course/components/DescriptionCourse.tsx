@@ -1,5 +1,5 @@
+import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import Title from "@/shared/UIComponents/Texts/Title";
-import Flex from "@/shared/UIComponents/Wrappers/Flex";
 import ArrowDownIcon from "@/shared/UIComponents/icons/ArrowDownIcon";
 import { useState } from "react";
 
@@ -11,7 +11,7 @@ const DescriptionCourse = () => {
   };
 
   return (
-    <Flex col noItemsCenter>
+    <Flex col noitemscenter>
       <Title className="mt-3 mb-3 text-2xl">Description</Title>
       <div
         className={` ${
