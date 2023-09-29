@@ -1,6 +1,6 @@
 import { useUIContext } from "@/shared/hooks";
 import { motion, useAnimation } from "framer-motion";
-const StickyWraperSidebar = ({ children, dataSubsidebar = null }: any) => {
+const StickyWraperSidebar = ({ children }: any) => {
   const { setOpenMenuNavInstructor } = useUIContext();
   const controls = useAnimation();
 

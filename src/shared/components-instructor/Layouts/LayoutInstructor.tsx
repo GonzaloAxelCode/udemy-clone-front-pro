@@ -18,7 +18,7 @@ const LayoutInstructor = ({ children }: any) => {
             </StickyWraperSidebar>
             <div className="flex flex-grow h-screen">{children}</div>
           </Flex>
-          <Footer />
+
           <Footer />
         </body>
       </Providers>

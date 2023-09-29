@@ -1,6 +1,5 @@
 const layout = ({ children }: any) => {
-    return <div>{children}</div>;
-  };
-  
-  export default layout;
-  
+  return <div className="p-12">{children}</div>;
+};
+
+export default layout;

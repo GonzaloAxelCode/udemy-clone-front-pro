@@ -1,5 +1,4 @@
 import Flex from "@/shared/UIComponents/CustomHTML/Flex";
-import SubAsideSidebar from "@/shared/components-instructor/Sidebars/SubAsideSidebar";
 const _data_subsidebar_example = [
   {
     path: "/instructor/communication/qa",
@@ -20,11 +19,8 @@ const _data_subsidebar_example = [
 ];
 const layout = ({ children }: any) => {
   return (
-    <Flex full noitemscenter>
-      <SubAsideSidebar data={_data_subsidebar_example} />
-      <Flex full className="flex-grow mt-16">
-        {children}
-      </Flex>
+    <Flex full noitemscenter className="d">
+      {children}
     </Flex>
   );
 };
