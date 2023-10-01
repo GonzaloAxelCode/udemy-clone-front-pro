@@ -94,6 +94,7 @@ const config: Config = {
       screens: {
         sm: "640px", // Pequeño
         md: "768px", // Mediano
+        md2: "980px",
         lg: "1080px", // Grande
         xl: "1280px", // Extra grande
         "2xl": "1536px", // Doble extra grande

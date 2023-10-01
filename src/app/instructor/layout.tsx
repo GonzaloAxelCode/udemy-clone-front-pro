@@ -1,25 +1,8 @@
 import Flex from "@/shared/UIComponents/CustomHTML/Flex";
-const _data_subsidebar_example = [
-  {
-    path: "/instructor/communication/qa",
-    name: "Q&A",
-  },
-  {
-    path: "/instructor/communication/messages",
-    name: "Messages",
-  },
-  {
-    path: "/instructor/communication/assignments",
-    name: "Assignments",
-  },
-  {
-    path: "/instructor/communication/announcements",
-    name: "Announcements",
-  },
-];
+
 const layout = ({ children }: any) => {
   return (
-    <Flex full noitemscenter className="d">
+    <Flex full noitemscenter className="flex-grow"  id="container_layout_instructor">
       {children}
     </Flex>
   );

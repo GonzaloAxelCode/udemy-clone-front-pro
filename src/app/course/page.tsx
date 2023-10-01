@@ -19,7 +19,6 @@ const CoursePage = () => {
     <Flex col noitemscenter full className="relative">
       <CurseTopFixed />
       <PresentationCourse />
-
       <Flex full noitemscenter className="py-10">
         <Flex className="flex-start m-auto lg:max-w-[670px] max-w-[600px]">
           <Flex col noitemscenter>
@@ -37,7 +36,6 @@ const CoursePage = () => {
         </Flex>
         <Flex className=" lg:w-[380px] lg:w-[0px]"></Flex>
       </Flex>
-
       <CurseBottomFixed />
     </Flex>
   );

@@ -8,7 +8,11 @@ const NavbarInstructor = () => {
   return (
     <Flex
       full
-      className="absolute z-3 bg-white h-[50px] px-4 py-8  w-full"
+      style={{
+        position: "absolute",
+        zIndex: 30,
+      }}
+      className="bg-white h-[50px] px-4 py-8  w-full"
       between={true}
     >
       <Flex></Flex>

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from "react";
 import { cn } from "tailwind-cn";
 
@@ -8,6 +7,7 @@ type ButtonProps = {
   size?: "sm" | "md" | "xl";
   type?: "button" | "submit" | "reset";
   extendClass?: string;
+  onClick?: any;
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -16,24 +16,24 @@ const Button: React.FC<ButtonProps> = ({
   size = "sm",
   type = "button",
   extendClass = "",
-
+  onClick,
   ...args
 }) => {
   let smStyle = "font-sm text-sm px-2 h-[40px]";
   let mdStyle = "h-[48px] px-3  text-md";
   let xlStyle = " h-[48px] text-xl";
-
+  const borderClasses = cn({
+    border: true,
+    "border-black": variant === "primary",
+    "border-white": variant === "invert-primary",
+    "border-transparent": !(
+      variant === "primary" || variant === "invert-primary"
+    ),
+  });
   return (
     <button
+      onClick={onClick}
       type={type}
-      style={{
-        border:
-          variant === "primary"
-            ? "1px solid #000"
-            : variant === "invert-primary"
-            ? "1px solid #fff"
-            : "1px solid transparent",
-      }}
       className={cn(
         " font-bold text-sm",
         variant === "primary" &&
@@ -48,13 +48,12 @@ const Button: React.FC<ButtonProps> = ({
         size === "md" && mdStyle,
         size === "sm" && smStyle,
         size === "xl" && xlStyle,
+        borderClasses,
         extendClass
       )}
       {...args}
     >
-      <Link href="#" className="m-0">
-        {children}
-      </Link>
+      {children}
     </button>
   );
 };

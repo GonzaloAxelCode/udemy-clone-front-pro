@@ -5,9 +5,10 @@ import Link from "next/link";
 
 const page = () => {
   return (
-    <Flex full col noitemscenter>
+    <Flex full col noitemscenter className="flex-grow">
       <h1 className=" text-4xl font-bold font-suisse-works">Announcements</h1>
-      <Flex col full className="mt-10">
+
+      <Flex col full justifycenter className="mt-10 mx-auto">
         <img
           src="https://s.udemycdn.com/communication/empty-mailbox-v2.jpg"
           className="m-auto"
@@ -17,7 +18,10 @@ const page = () => {
           Here’s where you can send your students a few email announcements
           every month. Use educational emails to support your students’
           learning. Use promotional emails to market your courses.
-          <Link href="#" className="underline underline-offset-4 text-linkpurple">
+          <Link
+            href="#"
+            className="underline underline-offset-4 text-linkpurple"
+          >
             Learn more
           </Link>
         </p>

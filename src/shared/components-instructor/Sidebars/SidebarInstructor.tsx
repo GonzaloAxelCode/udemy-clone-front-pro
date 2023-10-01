@@ -43,18 +43,18 @@ const SidebarInstructor = () => {
   const path = usePathname();
   const { openMenuNavInstructor } = useUIContext();
   return (
-    <Flex full col noitemscenter className="text-white relative z-5 w-[285px]">
+    <Flex full col noitemscenter className="text-white relative z-5">
       <Link
         className={cn(
           "w-[120px] h-[60px] pl-5 pt-4 ",
-          !openMenuNavInstructor && "hidden-part-logo"
+          !openMenuNavInstructor ? "hidden-part-logo" : "hidden-part-logo-active"
         )}
         href="/instructor/courses"
       >
         <Logo white />
       </Link>
 
-      <Flex full col noitemscenter className="text-white">
+      <Flex col noitemscenter className="w-full text-white">
         {_data_sidebar_instructor.map((el: any, index: number) => {
           return (
             <LinkSidebar

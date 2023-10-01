@@ -5,6 +5,7 @@ import "@/shared/styles/index.scss";
 import "@smastrom/react-rating/style.css";
 import type { Metadata } from "next";
 import { usePathname } from "next/navigation";
+import 'quill/dist/quill.snow.css';
 
 export const metadata: Metadata = {
   title: "Clean Architecture",

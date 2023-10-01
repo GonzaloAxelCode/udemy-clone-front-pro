@@ -8,8 +8,10 @@ import Link from "next/link";
 
 const page = () => {
   return (
-    <Flex full col noitemscenter>
-      <h1 className=" text-4xl font-bold font-suisse-works pb-2">Assignments</h1>
+    <Flex full col noitemscenter className="flex-grow">
+      <h1 className=" text-4xl font-bold font-suisse-works pb-2">
+        Assignments
+      </h1>
       <Flex className="space-x-6">
         <Flex>
           <Checkbox labelText={`Unread(0)`} id="checkbox-label-1" />
@@ -126,7 +128,7 @@ const page = () => {
           </Flex>
         </PopoverTooltip>
       </Flex>
-      <Flex col full className="mt-12">
+      <Flex col full className="mt-12 mx-auto">
         <img
           src="https://s.udemycdn.com/communication/empty-search.jpg"
           className="m-auto"

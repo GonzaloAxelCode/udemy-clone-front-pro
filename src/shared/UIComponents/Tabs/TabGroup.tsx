@@ -1,8 +1,9 @@
 "use client";
 import Flex from "@/shared/UIComponents/CustomHTML/Flex";
+import Link from "next/link";
 import React, { useState } from "react";
 import { cn } from "tailwind-cn";
-const TabGroup = (props: any) => {
+const TabGroup = ({ children, name }: any) => {
   const [activeTab, setActiveTab] = useState(0);
 
   const handleTabClick = (index: any) => {
@@ -12,21 +13,24 @@ const TabGroup = (props: any) => {
   return (
     <Flex full col noitemscenter>
       <Flex full className="hr-bottom">
-        {props.children.map((child: any, index: any) => (
-          <button
-            key={index}
-            onClick={() => handleTabClick(index)}
-            className={cn(
-              "text-base font-bold px-4 text-tabdisable py-3 border-b-2 border-white",
-              index !== activeTab ? "active" : " border-dark-100 text-dark-100"
-            )}
-          >
-            {child.props.name}
-          </button>
+        {children.map((child: any, index: any) => (
+          <Link href={child.props.href || "#"} key={index}>
+            <button
+              onClick={() => handleTabClick(index)}
+              className={cn(
+                "text-base font-bold px-1 mr-3 text-tabdisable py-3 border-b-2 border-white",
+                index !== activeTab
+                  ? "active"
+                  : " border-dark-100 text-dark-100"
+              )}
+            >
+              {child.props.name}
+            </button>
+          </Link>
         ))}
       </Flex>
       <Flex>
-        {props.children.map((child: any, index: any) =>
+        {children.map((child: any, index: any) =>
           React.cloneElement(child, {
             isActive: index === activeTab,
             key: index,

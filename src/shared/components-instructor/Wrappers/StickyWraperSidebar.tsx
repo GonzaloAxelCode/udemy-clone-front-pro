@@ -3,20 +3,22 @@ import { motion, useAnimation } from "framer-motion";
 const StickyWraperSidebar = ({ children }: any) => {
   const { setOpenMenuNavInstructor } = useUIContext();
   const controls = useAnimation();
+  const widthInitial = "57px";
+  const widthExpand = "285px";
 
   const handleHover = () => {
     setOpenMenuNavInstructor(true);
-    controls.start({ width: "285px" });
+    controls.start({ width: widthExpand });
   };
 
   const handleHoverExit = () => {
-    controls.start({ width: "57px" });
+    controls.start({ width: widthInitial });
     setOpenMenuNavInstructor(false);
   };
   return (
     <div style={{ position: "sticky", top: 0, zIndex: 50 }}>
       <motion.div
-        initial={{ width: "57px" }}
+        initial={{ width: widthInitial }}
         transition={{
           width: { duration: 0.4, ease: [0.2, 0, 0.38, 0.9] },
         }}
