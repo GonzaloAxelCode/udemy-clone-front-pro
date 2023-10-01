@@ -38,6 +38,9 @@ dependencies:
   '@types/react-dom':
     specifier: 18.2.7
     version: 18.2.7
+  array-move:
+    specifier: ^4.0.0
+    version: 4.0.0
   autoprefixer:
     specifier: 10.4.15
     version: 10.4.15(postcss@8.4.30)
@@ -86,6 +89,9 @@ dependencies:
   react-simple-star-rating:
     specifier: ^5.1.7
     version: 5.1.7(react-dom@18.2.0)(react@18.2.0)
+  react-sortable-hoc:
+    specifier: ^2.0.0
+    version: 2.0.0(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
   react-stars:
     specifier: ^2.2.5
     version: 2.2.5
@@ -109,6 +115,9 @@ devDependencies:
   '@swc/plugin-styled-components':
     specifier: ^1.5.83
     version: 1.5.87
+  '@types/array-move':
+    specifier: ^2.0.0
+    version: 2.0.0
   '@types/styled-components':
     specifier: ^5.1.28
     version: 5.1.28
@@ -2122,6 +2131,13 @@ packages:
     resolution: {integrity: sha512-S+5xqgqLq35uUBR7HcSN07skfexPVWis8fMsHmQRLzzTwxB6uBo183ts6OA/HhbITb0P7vRCLe/mq+SAkQHWsQ==}
     dev: true
 
+  /@types/array-move@2.0.0:
+    resolution: {integrity: sha512-M1Sb7db3XP65S2j5CWvzce2z0ORRfT/Bhd6mYu++nP6ZhRsntMixavFyxgf9NkQa37bveuIfpb0RKYRA8XVcGQ==}
+    deprecated: This is a stub types definition. array-move provides its own type definitions, so you do not need this installed.
+    dependencies:
+      array-move: 4.0.0
+    dev: true
+
   /@types/eslint-scope@3.7.5:
     resolution: {integrity: sha512-JNvhIEyxVW6EoMIFIvj93ZOywYFatlpu9deeH6eSx6PE3WHYvHaQtmHmQeNw7aA81bYGBPPQqdtBm6b1SsQMmA==}
     dependencies:
@@ -2509,6 +2525,10 @@ packages:
       get-intrinsic: 1.2.1
       is-string: 1.0.7
     dev: false
+
+  /array-move@4.0.0:
+    resolution: {integrity: sha512-+RY54S8OuVvg94THpneQvFRmqWdAHeqtMzgMW6JNurHxe8rsS07cHQdfGkXnTUXiBcyZ0j3SiDIxxj0RPiqCkQ==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
   /array-union@2.1.0:
     resolution: {integrity: sha512-HGyxoOTYUyCM6stUe6EJgnd4EoewAI7zMdfqO+kGjnlZmBDz/cR5pf8r/cR4Wq60sL/p0IkcjUEEPwS3GFrIyw==}
@@ -4876,6 +4896,20 @@ packages:
       react: '>=18.0.0'
       react-dom: '>=18.0.0'
     dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /react-sortable-hoc@2.0.0(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-JZUw7hBsAHXK7PTyErJyI7SopSBFRcFHDjWW5SWjcugY0i6iH7f+eJkY8cJmGMlZ1C9xz1J3Vjz0plFpavVeRg==}
+    peerDependencies:
+      prop-types: ^15.5.7
+      react: ^16.3.0 || ^17.0.0
+      react-dom: ^16.3.0 || ^17.0.0
+    dependencies:
+      '@babel/runtime': 7.23.1
+      invariant: 2.2.4
+      prop-types: 15.8.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false

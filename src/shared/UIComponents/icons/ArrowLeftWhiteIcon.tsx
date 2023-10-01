@@ -6,8 +6,8 @@ const ArrowLeftWhiteIcon = ({ scale = "1", ...args }) => {
       aria-label="Previous"
       role="img"
       focusable="false"
-      width={32}
-      height={32}
+      width={24}
+      height={24}
       style={{
         scale,
       }}

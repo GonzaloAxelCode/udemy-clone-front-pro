@@ -1,7 +1,9 @@
 "use client";
-import styled, { css } from "styled-components";
 
-interface FlexProps {
+import styled, { css } from "styled-components";
+import { cn } from "tailwind-cn";
+
+interface FlexProps extends React.HTMLProps<HTMLDivElement> {
   minscreen?: any;
   maxscreen?: any;
   col?: any;
@@ -16,9 +18,11 @@ interface FlexProps {
   itemsend?: any;
   disabled?: any;
   hidden?: any;
+  children?: any;
+  className?: string;
 }
 
-const Flex = styled.div<FlexProps>`
+const StyledFlex = styled.div<FlexProps>`
   display: ${(props) => (props.hidden ? "none" : "flex")};
   flex-direction: ${(props) => (props.col ? "column" : "")};
   align-items: ${(props) =>
@@ -42,9 +46,11 @@ const Flex = styled.div<FlexProps>`
 
   ${(props) =>
     props.disabled &&
-    `cursor: not-allowed;
-    opacity: 0.5; 
-    pointer-events: none; `}
+    css`
+      cursor: not-allowed;
+      opacity: 0.5;
+      pointer-events: none;
+    `}
 
   ${(props) =>
     props.minscreen &&
@@ -62,5 +68,13 @@ const Flex = styled.div<FlexProps>`
       }
     `}
 `;
+
+const Flex = (props: FlexProps) => {
+  return (
+    <StyledFlex className={cn(props.className)} {...props}>
+      {props.children}
+    </StyledFlex>
+  );
+};
 
 export default Flex;

@@ -204,18 +204,6 @@ const FileUploadImage = () => {
           >
             Crop image
           </Button>
-          <a
-            href="#hidden"
-            ref={hiddenAnchorRef}
-            download
-            style={{
-              position: "absolute",
-              top: "-200vh",
-              visibility: "hidden",
-            }}
-          >
-            Hidden download
-          </a>
         </div>
       )}
       <div

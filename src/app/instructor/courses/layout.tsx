@@ -1,5 +1,5 @@
 const Layout = ({ children }: any) => {
-  return <div>{children}</div>;
+  return <div className="w-full">{children}</div>;
 };
 
 export default Layout;

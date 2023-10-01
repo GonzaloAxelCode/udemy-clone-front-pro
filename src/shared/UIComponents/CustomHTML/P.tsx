@@ -11,6 +11,7 @@ const P = ({
   lg = false,
   md = false,
   xl = false,
+  style = {},
   ...args
 }: {
   className?: string;
@@ -23,6 +24,7 @@ const P = ({
   lg?: boolean;
   md?: boolean;
   xl?: boolean;
+  style?: any;
 }) => {
   return (
     <p
@@ -38,6 +40,7 @@ const P = ({
         xl && "text-xl",
         className
       )}
+      style={style}
       {...args}
     >
       {children}

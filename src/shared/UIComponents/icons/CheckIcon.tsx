@@ -5,7 +5,7 @@ const CheckIcon = ({ scale = "0.93", ...args }: { scale?: string }) => {
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
       focusable="false"
-      className="ud-icon ud-icon-xsmall ud-icon-color-neutral ud-block-list-item-icon"
+      className="ud-icon ud-icon-xsmall ud-icon-color-neutral"
       width={24}
       height={24}
       style={{

@@ -26,22 +26,33 @@ const PopoverTooltip = ({
   children,
   content,
   arrow = true,
+  click = false,
   placement = "auto",
   ...args
 }: any) => {
   const [isTooltipVisible, setTooltipVisible] = useState(false);
 
   const handleTooltipOpen = () => {
-    setTooltipVisible(true);
+    if (!click) {
+      setTooltipVisible(true);
+    }
   };
 
   const handleTooltipClose = () => {
-    setTooltipVisible(false);
+    
+      setTooltipVisible(false);
+    
+  };
+  const handleClickToogle = () => {
+    if (click) {
+      setTooltipVisible(!isTooltipVisible);
+    }
   };
 
   return (
     <motion.div
       className="cursor-pointer"
+      onClick={handleClickToogle}
       onMouseEnter={handleTooltipOpen}
       onMouseLeave={handleTooltipClose}
       {...args}

@@ -46,7 +46,7 @@ const CurseTopFixed = () => {
             <span className="text-sm text-white pt-1">105,177 students</span>
           </Flex>
         </Flex>
-        <Flex className="flex-end  space-x-2"></Flex>
+        <Flex className="flex-end  space-x-2"><></></Flex>
       </Flex>
     </FixedTop>
   );

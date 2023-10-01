@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { cn } from "tailwind-cn";
+import Button from "../Buttons/Button";
 import Flex from "../CustomHTML/Flex";
+import SearchWhiteIcon from "../icons/SearchWhiteIcon";
 
 interface Props {
   place?: string;
@@ -25,7 +27,7 @@ const InputTexts = ({
   type = "text",
   name = "Generic name",
   disable = false,
-  label = "Generic label",
+  label,
   prevValue = "http://www.twitter.com/",
   className = "",
 }: Props) => {
@@ -47,7 +49,9 @@ const InputTexts = ({
   };
   return (
     <Flex full col noitemscenter className="relative z-1">
-      <span className="mb-1 font-bold text-gray-400 text-sm">{label}</span>
+      {label && (
+        <span className="mb-1 font-bold text-gray-400 text-sm">{label}</span>
+      )}
       <div className="flex items-center w-full border-1 border-gray-500 border-solid relative z-1">
         {variant === "prevvalue" && (
           <Flex className="bg-gray-100 border-r-1 border-gray-500 border-solid px-3 h-[48px]">
@@ -71,6 +75,11 @@ const InputTexts = ({
           <Flex className="absolute right-4 bg-white  top-3 z-5">
             {countString}
           </Flex>
+        )}
+        {variant === "search" && (
+          <Button size="md" extendClass="w-[48px] w-[48px]" variant="secondary">
+            <SearchWhiteIcon />
+          </Button>
         )}
       </div>
     </Flex>
