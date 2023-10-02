@@ -1,0 +1,184 @@
+import Flex from "@/shared/UIComponents/CustomHTML/Flex";
+import P from "@/shared/UIComponents/CustomHTML/P";
+import InputTexts from "@/shared/UIComponents/Inputs/InputTexts";
+import PlusPurpleIcon from "@/shared/UIComponents/icons/PlusPurpleIcon";
+import ThreeLinesIcon from "@/shared/UIComponents/icons/ThreeLinesIcon";
+import TrashIcon from "@/shared/UIComponents/icons/TrashIcon";
+import { arrayMoveImmutable } from "array-move";
+import React, { useEffect, useState } from "react";
+import {
+  SortableContainer,
+  SortableElement,
+  SortableHandle,
+} from "react-sortable-hoc";
+
+const DragHandle = SortableHandle(() => (
+  <span className="flex cursor-move justify-center items-center cursor-move h-[50px] w-[50px] border-r-1 border-t-1 border-b-1 borderl-0 border-solid border-dark-100 hover:bg-gray-100">
+    <span>
+      <ThreeLinesIcon />
+    </span>
+  </span>
+));
+
+interface ItemProps {
+  value: string;
+  id: string;
+  numorden: number;
+}
+
+const SortableItem = SortableElement<ItemProps>(
+  ({ value, id, onDelete, onChange }: any) => {
+    const [isHovered, setIsHovered] = useState(false);
+
+    return (
+      <div
+        className="flex w-full items-center  "
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <InputTexts
+          place=""
+          value={value}
+          name={id}
+          variant="countstring"
+          type="text"
+          onChange={(e) => onChange(id, e.target.value)}
+        />
+        {isHovered && value !== "" ? (
+          <>
+            <span
+              className="flex justify-center items-center h-[50px] w-[50px] border-r-1 border-t-1 border-b-1 borderl-0 border-solid border-dark-100 hover:bg-gray-100"
+              onClick={() => onDelete(id)}
+            >
+              <span>
+                <TrashIcon />
+              </span>
+            </span>
+            <DragHandle />
+          </>
+        ) : (
+          <>
+            <span className="flex justify-center items-center h-[50px] w-[50px]  ">
+              <span></span>
+            </span>
+            <span className="flex justify-center items-center h-[50px] w-[50px] ">
+              <span></span>
+            </span>
+          </>
+        )}
+      </div>
+    );
+  }
+);
+
+const SSortableContainer: any = SortableContainer(({ children }: any) => {
+  return (
+    <div className="flex flex-col w-full space-y-4 max-w-[800px]">
+      {children}
+    </div>
+  );
+});
+
+const GoalsFormSortable: React.FC = () => {
+  const [form, setForm] = useState({});
+  const [items, setItems] = useState<any>([]);
+  const [elementCount, setElementCount] = useState(0);
+  const [changeValue, setChangeValue] = useState(false);
+
+  useEffect(() => {
+    addNewItem();
+  }, []);
+
+  useEffect(() => {
+    // Actualiza el estado 'form' con el orden correcto después de cada reordenamiento
+    const updatedForm = {};
+    items.forEach((item: any, index: number) => {
+      updatedForm[item.id] = {
+        value: form[item.id]?.value || item.value,
+        numorden: index + 1,
+      };
+    });
+    setForm(updatedForm);
+    //console.log(form);
+  }, [items, setForm, elementCount, changeValue]);
+
+  const onSortEnd = ({
+    oldIndex,
+    newIndex,
+  }: {
+    oldIndex: number;
+    newIndex: number;
+  }) => {
+    setItems((prevItems: any) =>
+      arrayMoveImmutable(prevItems, oldIndex, newIndex)
+    );
+    setChangeValue(!changeValue);
+  };
+
+  const addNewItem = () => {
+    const newItemId = `goal${elementCount + 1}`;
+    const newItem = {
+      id: newItemId,
+      value: "", // Inicialmente, el valor está vacío
+      numorden: elementCount + 1, // Asigna el número de orden
+    };
+
+    const insertIndex = items.findIndex((item: any) => item.id > newItemId);
+
+    if (insertIndex === -1) {
+      setItems((prevItems: any) => [...prevItems, newItem]);
+    } else {
+      setItems((prevItems: any) => [
+        ...prevItems.slice(0, insertIndex),
+        newItem,
+        ...prevItems.slice(insertIndex),
+      ]);
+    }
+
+    setElementCount(elementCount + 1);
+    setChangeValue(!changeValue);
+  };
+
+  const onDeleteItem = (id: string) => {
+    const updatedItems = items.filter((item: any) => item.id !== id);
+    setItems(updatedItems);
+    setChangeValue(!changeValue);
+  };
+
+  const handleInputChange = (id: string, value: string) => {
+    // Actualiza el estado 'form' con un objeto que contiene el valor y el número de orden
+    setForm({
+      ...form,
+      [id]: {
+        value,
+        numorden: form[id]?.numorden || 0,
+      },
+    });
+    setChangeValue(!changeValue);
+  };
+
+  return (
+    <Flex col full noitemscenter className="Sortable-container">
+      <SSortableContainer onSortEnd={onSortEnd} useDragHandle>
+        {items.map((item: any, index: number) => (
+          <SortableItem
+            key={item.id}
+            index={index}
+            value={form[item.id]?.value || item.value}
+            id={item.id}
+            numorden={item.numorden}
+            onDelete={onDeleteItem}
+            onChange={handleInputChange}
+          />
+        ))}
+      </SSortableContainer>
+      <button className="h-[48px] flex items-center space-x-3 text-linkpurple mt-3" onClick={addNewItem}>
+        <PlusPurpleIcon />
+        <P bold>Add more to your response</P>
+      </button>
+
+    </Flex>
+  );
+};
+
+export default GoalsFormSortable;

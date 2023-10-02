@@ -1,10 +1,12 @@
+
+
 import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import P from "@/shared/UIComponents/CustomHTML/P";
 import PlusPurpleIcon from "@/shared/UIComponents/icons/PlusPurpleIcon";
 import useSortableForm from "@/shared/hooks/useSortableForm";
 import { SSortableContainer, SortableItem } from "./SortableComponents";
 
-function GoalsFormSortable() {
+function RequisitesFormSortable() {
   const {
     form,
     items,
@@ -16,8 +18,9 @@ function GoalsFormSortable() {
 
   return (
     <Flex col full noitemscenter className="Sortable-container">
-      <SSortableContainer onSortEnd={onSortEnd} useDragHandle>
-        {items.map((item: any, index: any) => (
+      <SSortableContainer
+        onSortEnd={onSortEnd} useDragHandle>
+        {items.map((item:any, index:any) => (
           <SortableItem
             key={item.id}
             index={index}
@@ -29,15 +32,13 @@ function GoalsFormSortable() {
           />
         ))}
       </SSortableContainer>
-      <button
-        className="h-[48px] flex items-center space-x-3 text-linkpurple mt-3"
-        onClick={addNewItem}
-      >
+      <button className="h-[48px] flex items-center space-x-3 text-linkpurple mt-3" onClick={addNewItem}>
         <PlusPurpleIcon />
         <P bold>Add more to your response</P>
       </button>
+      
     </Flex>
   );
 }
 
-export default GoalsFormSortable;
+export default RequisitesFormSortable;

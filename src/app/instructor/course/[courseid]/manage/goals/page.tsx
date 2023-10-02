@@ -3,7 +3,8 @@ import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import P from "@/shared/UIComponents/CustomHTML/P";
 import LinkOffset from "@/shared/UIComponents/Links/LinkOffset";
 import GoalsFormSortable from "./components/GoalsFormSortable";
-
+import RequisitesFormSortable from "./components/RequisitesFormSortable";
+import WhoThisCourseFormSortable from "./components/WhoThisCourseFormSortable";
 const Page = () => {
   return (
     <Flex full col noitemscenter>
@@ -26,7 +27,28 @@ const Page = () => {
           <LinkOffset text="learning objectives or outcomes" /> that learners
           can expect to achieve after completing your course.
         </P>
+
         <GoalsFormSortable />
+
+        <P bold className="text-gray-400 mb-2">
+          What are the requirements or prerequisites for taking your course?
+        </P>
+        <P className=" mb-3">
+          List the required skills, experience, tools or equipment learners
+          should have prior to taking your course. If there are no requirements,
+          use this space as an opportunity to lower the barrier for beginners.
+        </P>
+        <RequisitesFormSortable />
+        <P bold className="text-gray-400 mb-2">
+          Who is this course for?{" "}
+        </P>
+        <P className=" mb-3">
+          Write a clear description of the{" "}
+          <LinkOffset text="intended learners" /> for your course who will find
+          your course content valuable. This will help you attract the right
+          learners to your course.{" "}
+        </P>
+        <WhoThisCourseFormSortable />
       </Flex>
     </Flex>
   );

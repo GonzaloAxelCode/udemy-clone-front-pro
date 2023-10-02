@@ -4,7 +4,7 @@ import PlusPurpleIcon from "@/shared/UIComponents/icons/PlusPurpleIcon";
 import useSortableForm from "@/shared/hooks/useSortableForm";
 import { SSortableContainer, SortableItem } from "./SortableComponents";
 
-function GoalsFormSortable() {
+function WhoThisCourseFormSortable() {
   const {
     form,
     items,
@@ -40,4 +40,4 @@ function GoalsFormSortable() {
   );
 }
 
-export default GoalsFormSortable;
+export default WhoThisCourseFormSortable;
