@@ -3,7 +3,7 @@
 import styled, { css } from "styled-components";
 import { cn } from "tailwind-cn";
 
-interface FlexProps extends React.HTMLProps<HTMLDivElement> {
+interface FlexProps {
   minscreen?: any;
   maxscreen?: any;
   col?: any;
@@ -19,31 +19,10 @@ interface FlexProps extends React.HTMLProps<HTMLDivElement> {
   disabled?: any;
   hidden?: any;
   children?: any;
-  className?: string;
+  wfit?: any;
 }
 
-const StyledFlex = styled.div<FlexProps>`
-  display: ${(props) => (props.hidden ? "none" : "flex")};
-  flex-direction: ${(props) => (props.col ? "column" : "")};
-  align-items: ${(props) =>
-    props.stretch
-      ? "stretch"
-      : !props.noitemscenter
-      ? "center"
-      : props.itemsend
-      ? "flex-end"
-      : "flex-start"};
-
-  justify-content: ${(props) =>
-    props.justifycenter
-      ? "center"
-      : props.between
-      ? "space-between"
-      : "flex-start"};
-
-  height: ${(props) => (props.hfull ? "100%" : "")};
-  width: ${(props) => (props.full ? "100%" : "")};
-
+const StyledFlex2 = styled.div<any>`
   ${(props) =>
     props.disabled &&
     css`
@@ -69,11 +48,53 @@ const StyledFlex = styled.div<FlexProps>`
     `}
 `;
 
-const Flex = (props: FlexProps) => {
+const Flex = (
+  props: React.HTMLProps<HTMLDivElement> & FlexProps,
+  { ...args }: React.HTMLProps<HTMLDivElement>
+) => {
+  const flexClasses = cn(
+    "flex",
+    props.hidden ? "hidden" : "",
+    props.col ? "flex-col" : "",
+    props.stretch ? "items-stretch" : "",
+    props.itemsend ? "items-end" : "",
+    !props.noitemscenter ? "items-center" : "flex-start",
+    props.justifycenter ? "justify-center" : "",
+    props.between ? "justify-between" : "",
+    props.hfull ? "h-full" : "w-auto",
+    props.full ? "w-full" : "w-auto",
+    props.wfit ? "w-fit" : ""
+  );
+  const {
+    hidden,
+    col,
+    stretch,
+    itemsend,
+    noitemscenter,
+    justifycenter,
+    between,
+    hfull,
+    full,
+    wfit,
+    className,
+
+    // Otras propiedades específicas que necesitas desestructurar
+    ...restProps // El resto de las propiedades
+  } = props;
+
   return (
-    <StyledFlex className={cn(props.className)} {...props}>
+    <StyledFlex2
+      className={`${flexClasses} ${props.className || ""}`}
+      disabled={props.disabled}
+      cssmax={props.cssmax}
+      cssmin={props.cssmin}
+      minscreen={props.minscreen}
+      maxscreen={props.maxscreen}
+      style={props.style}
+      {...restProps}
+    >
       {props.children}
-    </StyledFlex>
+    </StyledFlex2>
   );
 };
 

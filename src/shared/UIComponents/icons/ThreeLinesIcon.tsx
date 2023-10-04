@@ -1,5 +1,4 @@
-
-const ThreeLinesIcon = () => {
+const ThreeLinesIcon = ({ scale = "1", ...args }: { scale?: string }) => {
   return (
     <svg
       xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -10,6 +9,10 @@ const ThreeLinesIcon = () => {
       className="ud-icon ud-icon-medium ud-icon-color-neutral"
       width={24}
       height={24}
+      style={{
+        scale,
+        ...args,
+      }}
     >
       <defs>
         <symbol id="icon-menu" viewBox="0 0 24 24">

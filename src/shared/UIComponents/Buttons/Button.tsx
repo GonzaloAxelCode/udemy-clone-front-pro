@@ -4,7 +4,7 @@ import { cn } from "tailwind-cn";
 type ButtonProps = {
   children: any;
   variant: "primary" | "secondary" | "purple" | "white" | "invert-primary";
-  size?: "sm" | "md" | "xl";
+  size?: "xs" | "sm" | "md" | "xl";
   type?: "button" | "submit" | "reset";
   extendClass?: string;
   onClick?: any;
@@ -20,6 +20,7 @@ const Button: React.FC<ButtonProps> = ({
   ...args
 }) => {
   let smStyle = "font-sm text-sm px-2 h-[40px]";
+  let xsStyle = "font-sm text-sm px-2 h-34px]";
   let mdStyle = "h-[48px] px-3  text-md";
   let xlStyle = " h-[48px] text-xl";
   const borderClasses = cn({
@@ -48,6 +49,7 @@ const Button: React.FC<ButtonProps> = ({
         size === "md" && mdStyle,
         size === "sm" && smStyle,
         size === "xl" && xlStyle,
+        size === "xs" && xsStyle,
         borderClasses,
         extendClass
       )}

@@ -16,9 +16,11 @@ interface Props {
   className?: string;
   limit?: number;
   prevValue?: string;
+  size?: "sm" | "md" | "xl";
 }
 
 const InputTexts = ({
+  size = "md",
   limit = 80,
   place = "Generic Place",
   value,
@@ -48,20 +50,33 @@ const InputTexts = ({
     }
   };
   return (
-    <Flex full col noitemscenter className="relative z-1">
+    <Flex
+      full
+      col
+      noitemscenter
+      className={cn(size === "sm" && "text-sm", "relative z-1")}
+    >
       {label && (
         <span className="mb-1 font-bold text-gray-400 text-sm">{label}</span>
       )}
       <div className="flex items-center w-full border-1 border-gray-500 border-solid relative z-1">
         {variant === "prevvalue" && (
-          <Flex className="bg-gray-100 border-r-1 border-gray-500 border-solid px-3 h-[48px]">
+          <Flex
+            className={cn(
+              "bg-gray-100 border-r-1 border-gray-500 border-solid px-3",
+              size === "md" && " h-[48px]",
+              size === "sm" && " h-[34px]"
+            )}
+          >
             http://www.twitter.com/
           </Flex>
         )}
         <input
           className={cn(
             disable && " cursor-no-drop cursor-not-allowed",
-            " w-[94%] focus:outline-none px-4 h-[48px]  relative z-1",
+            " w-[94%] focus:outline-none px-4  relative z-1",
+            size === "md" && " h-[48px]",
+            size === "sm" && " h-[34px]",
             className
           )}
           placeholder={place}
@@ -72,12 +87,19 @@ const InputTexts = ({
           name={name}
         />
         {variant === "countstring" && (
-          <Flex className="absolute right-4 bg-white  top-3 z-5">
+          <Flex className="absolute right-4 bg-white top-1/2 transform -translate-y-1/2 z-5">
             {countString}
           </Flex>
         )}
         {variant === "search" && (
-          <Button size="md" extendClass="w-[48px] w-[48px]" variant="secondary">
+          <Button
+            size="md"
+            extendClass={cn(
+              size === "md" && "w-[48px] w-[48px]",
+              size === "sm" && "w-[34px] w-[34px]"
+            )}
+            variant="secondary"
+          >
             <SearchWhiteIcon />
           </Button>
         )}

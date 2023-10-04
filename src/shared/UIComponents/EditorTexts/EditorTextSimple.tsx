@@ -1,7 +1,7 @@
 import ReactQuill from "react-quill";
 import Flex from "../CustomHTML/Flex";
 
-const EditorTextSimple = ({ name, onChange, label }: any) => {
+const EditorTextSimple = ({ name, onChange, label = false }: any) => {
   let modules = {
     toolbar: [["bold", "italic"]],
   };
@@ -21,7 +21,9 @@ const EditorTextSimple = ({ name, onChange, label }: any) => {
 
   return (
     <Flex col noitemscenter full style={{ height: "120px", width: "100%" }}>
-      <span className="mb-1 font-bold text-gray-400 text-sm">{label}</span>
+      {label && (
+        <span className="mb-1 font-bold text-gray-400 text-sm">{label}</span>
+      )}
       <ReactQuill
         theme="snow"
         modules={modules}
