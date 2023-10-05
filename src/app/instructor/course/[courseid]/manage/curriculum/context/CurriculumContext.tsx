@@ -6,10 +6,6 @@ export interface CurriculumContextType {
   setOpenNameFormSelect: any;
   openEditSection: any;
   setOpenEditSection: any;
-  openEdit: any;
-  setOpenEdit: any;
-  openSelectContentTypeExpand: any;
-  setOpenSelectContentTypeExpand: any;
   openSelectInsert: any;
   setOpenSelectInsert: any;
   openCreateFormNewSection: any;
@@ -37,19 +33,6 @@ export function ProviderCurriculum({
     open: false,
   });
 
-  const [openEdit, setOpenEdit] = useState({
-    idchild: null,
-    idsection: null,
-    open: false,
-  });
-
-  const [openSelectContentTypeExpand, setOpenSelectContentTypeExpand] =
-    useState({
-      idchild: null,
-      idsection: null,
-      open: false,
-    });
-
   const [openSelectInsert, setOpenSelectInsert] = useState({
     open: false,
     idsection: null,
@@ -63,10 +46,7 @@ export function ProviderCurriculum({
     setOpenNameFormSelect,
     openEditSection,
     setOpenEditSection,
-    openEdit,
-    setOpenEdit,
-    openSelectContentTypeExpand,
-    setOpenSelectContentTypeExpand,
+
     openSelectInsert,
     setOpenSelectInsert,
     openCreateFormNewSection,

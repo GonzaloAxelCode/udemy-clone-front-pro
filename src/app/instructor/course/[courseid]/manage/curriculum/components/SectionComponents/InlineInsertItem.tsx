@@ -5,11 +5,11 @@ import PlusIcon from "@/shared/UIComponents/icons/PlusIcon";
 import PlusPurpleIcon from "@/shared/UIComponents/icons/PlusPurpleIcon";
 import { motion } from "framer-motion";
 import { cn } from "tailwind-cn";
-import useCurriculum from "../functions/useCurriculumContext";
-import FormAddNewLecture from "./FormAddNewLecture";
-import FormAddNewQuiz from "./FormAddNewQuiz";
-import FormCodeExercise from "./FormCodeExercise";
-import Formassignment from "./Formassignment";
+import useCurriculum from "../../functions/useCurriculumContext";
+import FormAddNewLecture from "../FormsAddCurriculumItems/FormAddNewLecture";
+import FormAddNewQuiz from "../FormsAddCurriculumItems/FormAddNewQuiz";
+import FormCodeExercise from "../FormsAddCurriculumItems/FormCodeExercise";
+import Formassignment from "../FormsAddCurriculumItems/Formassignment";
 
 const InlineInsertItem = ({ handleAddItem, idsection }: any) => {
   const {

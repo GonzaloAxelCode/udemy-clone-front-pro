@@ -6,12 +6,13 @@ import PenIcon from "@/shared/UIComponents/icons/PenIcon";
 import ThreeLinesIcon from "@/shared/UIComponents/icons/ThreeLinesIcon";
 import TrashIcon from "@/shared/UIComponents/icons/TrashIcon";
 import { useState } from "react";
-import useCurriculum from "../functions/useCurriculumContext";
+import useCurriculum from "../../functions/useCurriculumContext";
 import FormEditSectionContainer from "./FormEditSectionContainer";
 
 const SectionContainer = ({
   idsection,
   children,
+  block,
   title,
   handleDeleteContainer,
 }: any) => {
@@ -36,7 +37,7 @@ const SectionContainer = ({
           style={{ padding: "19px 8px" }}
         >
           <Flex full className="space-x-2">
-            <P bold> Section: </P>
+            <P bold> Section {block.order}: </P>
             <DocumentIcon scale="0.7" />
             <P> {title} </P>
             {isHoverHeader ? (

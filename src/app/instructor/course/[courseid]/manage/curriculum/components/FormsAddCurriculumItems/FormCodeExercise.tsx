@@ -2,9 +2,9 @@ import Button from "@/shared/UIComponents/Buttons/Button";
 import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import InputTexts from "@/shared/UIComponents/Inputs/InputTexts";
 import { useState } from "react";
-import useCurriculum from "../functions/useCurriculumContext";
+import useCurriculum from "../../functions/useCurriculumContext";
 
-const FormAddNewLecture = ({ handleCloseForm, handleAddItem }: any) => {
+const FormCodeExercise = ({ handleCloseForm }: any) => {
   const [form, setForm] = useState({
     title: "",
     description: "",
@@ -20,8 +20,6 @@ const FormAddNewLecture = ({ handleCloseForm, handleAddItem }: any) => {
       full
       className="mb-8 space-x-2 p-3 relative z-2 bg-white border-1 border-dark-100 border-solid"
     >
-      <div style={{ flex: "0 0 auto" }}>New Lecture:</div>
-
       <Flex col full itemsend noitemscenter between className="space-y-4">
         <InputTexts
           size="sm"
@@ -36,21 +34,14 @@ const FormAddNewLecture = ({ handleCloseForm, handleAddItem }: any) => {
         <Flex>
           <Flex full className="">
             <Button
-              onClick={() => handleCloseForm()}
               variant="invert-primary"
+              onClick={() => handleCloseForm()}
               extendClass="h-[34px] "
             >
               Cancel
             </Button>
-            <Button
-              onClick={() => {
-                handleAddItem(form.title);
-                handleCloseForm("")
-              }}
-              variant="secondary"
-              extendClass="h-[34px]"
-            >
-              Add Lecture
+            <Button variant="secondary" extendClass="h-[34px]">
+              Add Coding Exercise
             </Button>
           </Flex>
         </Flex>
@@ -59,4 +50,4 @@ const FormAddNewLecture = ({ handleCloseForm, handleAddItem }: any) => {
   );
 };
 
-export default FormAddNewLecture;
+export default FormCodeExercise;

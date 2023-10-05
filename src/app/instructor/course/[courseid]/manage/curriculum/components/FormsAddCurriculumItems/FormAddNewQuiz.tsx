@@ -3,7 +3,6 @@ import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import EditorTextSimple from "@/shared/UIComponents/EditorTexts/EditorTextSimple";
 import InputTexts from "@/shared/UIComponents/Inputs/InputTexts";
 import { useState } from "react";
-import useCurriculum from "../functions/useCurriculumContext";
 
 const FormAddNewQuiz = ({ handleCloseForm }: any) => {
   const [form, setForm] = useState({
@@ -14,7 +13,6 @@ const FormAddNewQuiz = ({ handleCloseForm }: any) => {
     setForm({ ...form, [e.target.name]: valid ? e.target.value : "" });
     console.log(form);
   };
-  const { setOpenNameFormSelect } = useCurriculum();
 
   return (
     <Flex

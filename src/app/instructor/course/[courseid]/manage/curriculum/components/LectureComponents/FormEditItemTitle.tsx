@@ -2,9 +2,8 @@ import Button from "@/shared/UIComponents/Buttons/Button";
 import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import InputTexts from "@/shared/UIComponents/Inputs/InputTexts";
 import { useState } from "react";
-import useCurriculum from "../functions/useCurriculumContext";
 
-const FormEditItemTitle = ({ idchild }: any) => {
+const FormEditItemTitle = ({ idChild, onClose }: any) => {
   const [form, setForm] = useState({
     title: "",
     description: "",
@@ -13,7 +12,6 @@ const FormEditItemTitle = ({ idchild }: any) => {
     setForm({ ...form, [e.target.name]: valid ? e.target.value : "" });
     console.log(form);
   };
-  const { openEdit, setOpenEdit } = useCurriculum();
 
   return (
     <Flex
@@ -35,7 +33,7 @@ const FormEditItemTitle = ({ idchild }: any) => {
         <Flex>
           <Flex full className="">
             <Button
-              onClick={() => setOpenEdit(false)}
+              onClick={onClose}
               variant="invert-primary"
               extendClass="h-[34px] "
             >

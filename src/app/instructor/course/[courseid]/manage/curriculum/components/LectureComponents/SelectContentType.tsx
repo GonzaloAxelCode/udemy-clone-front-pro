@@ -8,11 +8,8 @@ import PlusIcon from "@/shared/UIComponents/icons/PlusIcon";
 import VideoIcon from "@/shared/UIComponents/icons/VideoIcon";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import useCurriculum from "../functions/useCurriculumContext";
 
-const SelectContentType = ({ idchild }: any) => {
-  const { openSelectContentTypeExpand, setOpenSelectContentTypeExpand } =
-    useCurriculum();
+const SelectContentType = ({ idchild, onClose }: any) => {
   return (
     <Flex
       full
@@ -27,17 +24,11 @@ const SelectContentType = ({ idchild }: any) => {
       </P>
       <Button
         extendClass="absolute flex items-center hover:bg-white -top-[25px] right-6 z-2 border-t-1 border-l-1 border-r-1 border-b-0  border-dark-100 "
-        onClick={() =>
-          setOpenSelectContentTypeExpand({
-            idchild,
-            open: false,
-          })
-        }
         variant="white"
         size="xs"
       >
         <span>Select content type</span>
-        <span className="rotate-45">
+        <span onClick={onClose} className="cursor-pointer rotate-45">
           <PlusIcon />
         </span>
       </Button>

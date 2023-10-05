@@ -2,9 +2,8 @@ import Button from "@/shared/UIComponents/Buttons/Button";
 import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import InputTexts from "@/shared/UIComponents/Inputs/InputTexts";
 import { useState } from "react";
-import useCurriculum from "../functions/useCurriculumContext";
 
-const Formassignment = ({ handleCloseForm }: any) => {
+const FormAddNewLecture = ({ handleCloseForm, handleAddItem }: any) => {
   const [form, setForm] = useState({
     title: "",
     description: "",
@@ -13,7 +12,6 @@ const Formassignment = ({ handleCloseForm }: any) => {
     setForm({ ...form, [e.target.name]: valid ? e.target.value : "" });
     console.log(form);
   };
-  const { setOpenNameFormSelect } = useCurriculum();
 
   return (
     <Flex
@@ -21,6 +19,8 @@ const Formassignment = ({ handleCloseForm }: any) => {
       full
       className="mb-8 space-x-2 p-3 relative z-2 bg-white border-1 border-dark-100 border-solid"
     >
+      <div style={{ flex: "0 0 auto" }}>New Lecture:</div>
+
       <Flex col full itemsend noitemscenter between className="space-y-4">
         <InputTexts
           size="sm"
@@ -41,8 +41,15 @@ const Formassignment = ({ handleCloseForm }: any) => {
             >
               Cancel
             </Button>
-            <Button variant="secondary" extendClass="h-[34px]">
-              Add Assignment
+            <Button
+              onClick={() => {
+                handleAddItem(form.title);
+                handleCloseForm("");
+              }}
+              variant="secondary"
+              extendClass="h-[34px]"
+            >
+              Add Lecture
             </Button>
           </Flex>
         </Flex>
@@ -51,4 +58,4 @@ const Formassignment = ({ handleCloseForm }: any) => {
   );
 };
 
-export default Formassignment;
+export default FormAddNewLecture;

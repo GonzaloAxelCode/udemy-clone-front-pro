@@ -2,8 +2,8 @@ import Button from "@/shared/UIComponents/Buttons/Button";
 import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import InputTexts from "@/shared/UIComponents/Inputs/InputTexts";
 import { useState } from "react";
-import useCurriculum from "../functions/useCurriculumContext";
-const FormEditSectionContainer = ({ idsection }: any) => {
+import useCurriculum from "../../functions/useCurriculumContext";
+const FormAddNewSection = ({ handleAddNewSection }: any) => {
   const [form, setForm] = useState({
     title: "",
     learning_objetive: "",
@@ -12,7 +12,8 @@ const FormEditSectionContainer = ({ idsection }: any) => {
     setForm({ ...form, [e.target.name]: valid ? e.target.value : "" });
     console.log(form);
   };
-  const { openEditSection, setOpenEditSection } = useCurriculum();
+  const { openCreateFormNewSection, setOpenCreateFormNewSection } =
+    useCurriculum();
   return (
     <Flex
       noitemscenter
@@ -33,7 +34,7 @@ const FormEditSectionContainer = ({ idsection }: any) => {
           type="text"
           limit={80}
           onChange={onChange}
-          className="mb-3"
+          
         />
 
         <InputTexts
@@ -52,12 +53,19 @@ const FormEditSectionContainer = ({ idsection }: any) => {
           <Flex full className="">
             <Button
               variant="invert-primary"
-              onClick={() => setOpenEditSection(false)}
+              onClick={() => setOpenCreateFormNewSection(false)}
               extendClass="h-[34px] "
             >
               Cancel
             </Button>
-            <Button variant="secondary" extendClass="h-[34px]">
+            <Button
+              variant="secondary"
+              onClick={() => {
+                handleAddNewSection(form.title, form.learning_objetive);
+                setOpenCreateFormNewSection(false);
+              }}
+              extendClass="h-[34px]"
+            >
               Save Section
             </Button>
           </Flex>
@@ -67,4 +75,4 @@ const FormEditSectionContainer = ({ idsection }: any) => {
   );
 };
 
-export default FormEditSectionContainer;
+export default FormAddNewSection;

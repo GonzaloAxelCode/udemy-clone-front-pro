@@ -2,9 +2,9 @@ import Button from "@/shared/UIComponents/Buttons/Button";
 import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import InputTexts from "@/shared/UIComponents/Inputs/InputTexts";
 import { useState } from "react";
-import useCurriculum from "../functions/useCurriculumContext";
+import useCurriculum from "../../functions/useCurriculumContext";
 
-const FormCodeExercise = ({ handleCloseForm }: any) => {
+const Formassignment = ({ handleCloseForm }: any) => {
   const [form, setForm] = useState({
     title: "",
     description: "",
@@ -14,6 +14,7 @@ const FormCodeExercise = ({ handleCloseForm }: any) => {
     console.log(form);
   };
   const { setOpenNameFormSelect } = useCurriculum();
+
   return (
     <Flex
       noitemscenter
@@ -34,14 +35,14 @@ const FormCodeExercise = ({ handleCloseForm }: any) => {
         <Flex>
           <Flex full className="">
             <Button
-              variant="invert-primary"
               onClick={() => handleCloseForm()}
+              variant="invert-primary"
               extendClass="h-[34px] "
             >
               Cancel
             </Button>
             <Button variant="secondary" extendClass="h-[34px]">
-              Add Coding Exercise
+              Add Assignment
             </Button>
           </Flex>
         </Flex>
@@ -50,4 +51,4 @@ const FormCodeExercise = ({ handleCloseForm }: any) => {
   );
 };
 
-export default FormCodeExercise;
+export default Formassignment;
