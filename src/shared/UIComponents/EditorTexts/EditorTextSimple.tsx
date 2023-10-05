@@ -20,7 +20,12 @@ const EditorTextSimple = ({ name, onChange, label = false }: any) => {
   };
 
   return (
-    <Flex col noitemscenter full style={{ height: "120px", width: "100%" }}>
+    <Flex
+      col
+      noitemscenter
+      full
+      style={{ height: "120px", marginBottom: "20px", width: "100%" }}
+    >
       {label && (
         <span className="mb-1 font-bold text-gray-400 text-sm">{label}</span>
       )}

@@ -14,6 +14,8 @@ import { cn } from "tailwind-cn";
 import useLectureEditor from "../../functions/useLectureEditor";
 import FormEditItemTitle from "./FormEditItemTitle";
 import SelectContentType from "./SelectContentType";
+import AddResourceForm from "./add-resource/AddResourceForm";
+import CreateDescriptionForm from "./create-description/CreateDescriptionForm";
 
 const LectureEditorItem = ({
   block,
@@ -30,8 +32,12 @@ const LectureEditorItem = ({
     openSelectContentTypeExpand,
     expand,
     openEdit,
+    setExpand,
   } = useLectureEditor(childblockid);
+
   const [isHoverHeader, setIsHoverHeader] = useState(false);
+  const [openDescriptionForm, setOpenDescriptionForm] = useState(false);
+  const [openAddResources, setOpenAddResources] = useState(false);
 
   return (
     <Flex
@@ -81,10 +87,13 @@ const LectureEditorItem = ({
                 )}
               </Flex>
               <Flex>
-                {!openSelectContentTypeExpand.open && (
+                {!openSelectContentTypeExpand.open  && (
                   <React.Fragment>
                     <Button
-                      onClick={handleOpenSelectContentTypeExpand}
+                      onClick={() => {
+                        handleOpenSelectContentTypeExpand();
+                        setExpand({ ...expand, open: false });
+                      }}
                       variant="white"
                       extendClass="h-[34px] flex items-center space-x-2 border-1 border-dark-100 border-solid"
                     >
@@ -119,7 +128,17 @@ const LectureEditorItem = ({
           )}
         </Flex>
       </Flex>
-
+      <div
+        className={cn(openSelectContentTypeExpand.open ? "w-full" : "hidden")}
+      >
+        <SelectContentType
+          onClose={() => {
+            handleCloseSelectContent();
+            setExpand({ ...expand, open: false });
+          }}
+          idchild={childblockid}
+        />
+      </div>
       <Flex
         col
         full
@@ -131,17 +150,45 @@ const LectureEditorItem = ({
         )}
       >
         <Button
+          onClick={() => {
+            setOpenDescriptionForm(true);
+          }}
           variant="white"
-          extendClass="h-[34px] w-fit flex items-center space-x-2 border-1 border-dark-100 border-solid"
+          extendClass={cn(
+            !openDescriptionForm
+              ? "h-[34px] w-fit flex items-center space-x-2 border-1 border-dark-100 border-solid"
+              : "hidden"
+          )}
         >
           <PlusIcon />
           <P bold sm>
             Description
           </P>
         </Button>
+
+        <div
+          className={cn(
+            expand.open && openDescriptionForm ? "flex w-full" : "hidden"
+          )}
+        >
+          <CreateDescriptionForm
+            onClose={() => {
+              setOpenDescriptionForm(false);
+            }}
+          />
+        </div>
+
         <Button
+          onClick={() => {
+            setOpenAddResources(true);
+            setExpand({ ...expand, open: false });
+          }}
           variant="white"
-          extendClass="h-[34px] w-fit flex items-center space-x-2 border-1 border-dark-100 border-solid"
+          extendClass={cn(
+            !openAddResources
+              ? "h-[34px] w-fit flex items-center space-x-2 border-1 border-dark-100 border-solid"
+              : "hidden"
+          )}
         >
           <PlusIcon />
           <P bold sm>
@@ -150,11 +197,12 @@ const LectureEditorItem = ({
         </Button>
       </Flex>
 
-      <div
-        className={cn(openSelectContentTypeExpand.open ? "w-full" : "hidden")}
-      >
-        <SelectContentType
-          onClose={handleCloseSelectContent}
+      <div className={cn(openAddResources ? "w-full" : "hidden")}>
+        <AddResourceForm
+          onClose={() => {
+            setExpand({ ...expand, open: true });
+            setOpenAddResources(false);
+          }}
           idchild={childblockid}
         />
       </div>

@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 const useLectureEditor = (childblockid: any) => {
-    
   const [openEdit, setOpenEdit] = useState({
     idchild: childblockid,
     open: false,
@@ -63,6 +62,7 @@ const useLectureEditor = (childblockid: any) => {
     handleCloseSelectContent,
     openSelectContentTypeExpand,
     expand,
+    setExpand,
     openEdit,
   };
 };

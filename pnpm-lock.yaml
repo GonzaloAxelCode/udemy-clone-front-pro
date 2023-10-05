@@ -104,6 +104,12 @@ dependencies:
   styled-components:
     specifier: ^6.0.8
     version: 6.0.8(babel-plugin-styled-components@2.1.4)(react-dom@18.2.0)(react@18.2.0)
+  suneditor:
+    specifier: ^2.45.1
+    version: 2.45.1
+  suneditor-react:
+    specifier: ^3.6.1
+    version: 3.6.1(react-dom@18.2.0)(react@18.2.0)(suneditor@2.45.1)
   tailwind-cn:
     specifier: ^1.0.2
     version: 1.0.2(clsx@2.0.0)(tailwind-merge@1.14.0)
@@ -5427,6 +5433,22 @@ packages:
       pirates: 4.0.6
       ts-interface-checker: 0.1.13
     dev: true
+
+  /suneditor-react@3.6.1(react-dom@18.2.0)(react@18.2.0)(suneditor@2.45.1):
+    resolution: {integrity: sha512-12f9KLnEB6pAdyHJINTzRBg3UOWVZZ+jVYSEtwdBTDYQW4amUZr0xOnpikbBAlxb9rcTYV5RHAsad3gnNhLsuA==}
+    peerDependencies:
+      react: '>= 16.8.0'
+      react-dom: '>= 16.8.0'
+      suneditor: ^2.44.10
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      suneditor: 2.45.1
+    dev: false
+
+  /suneditor@2.45.1:
+    resolution: {integrity: sha512-fLxc0nLwd77vaPuf78D+VAFNAgX9hLps6h96JA/LUCpqt4LeYnEaIE1RfJojX+BhSA+krl5qZ8pdgqcoo3dN3g==}
+    dev: false
 
   /supports-color@5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}

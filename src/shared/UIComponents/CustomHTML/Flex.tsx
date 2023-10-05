@@ -53,8 +53,6 @@ const Flex = (
   { ...args }: React.HTMLProps<HTMLDivElement>
 ) => {
   const flexClasses = cn(
-    "flex",
-    props.hidden ? "hidden" : "",
     props.col ? "flex-col" : "",
     props.stretch ? "items-stretch" : "",
     props.itemsend ? "items-end" : "",
@@ -63,7 +61,8 @@ const Flex = (
     props.between ? "justify-between" : "",
     props.hfull ? "h-full" : "w-auto",
     props.full ? "w-full" : "w-auto",
-    props.wfit ? "w-fit" : ""
+    props.wfit ? "w-fit" : "",
+    props.hidden ? "hidden" : "flex"
   );
   const {
     hidden,

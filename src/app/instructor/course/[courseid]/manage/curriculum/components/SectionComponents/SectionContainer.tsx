@@ -12,6 +12,7 @@ import FormEditSectionContainer from "./FormEditSectionContainer";
 const SectionContainer = ({
   idsection,
   children,
+  index,
   block,
   title,
   handleDeleteContainer,
@@ -37,7 +38,7 @@ const SectionContainer = ({
           style={{ padding: "19px 8px" }}
         >
           <Flex full className="space-x-2">
-            <P bold> Section {block.order}: </P>
+            <P bold> Section {index}: </P>
             <DocumentIcon scale="0.7" />
             <P> {title} </P>
             {isHoverHeader ? (

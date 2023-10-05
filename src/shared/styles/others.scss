@@ -305,3 +305,37 @@ input[type="checkbox"]:checked::before {
   /* Estilos para los botones personalizados dentro de #contenedor */
   width: 100%;
 }
+
+.sun-editor-editable {
+  cursor: default;
+  background: white !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-top: 1px solid rgb(45 47 49) !important;
+}
+.sun-editor {
+  cursor: default;
+  border: 1px solid rgb(45 47 49) !important;
+  background: white !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.se-resizing-bar {
+  display: none !important;
+}
+
+.se-container {
+  border: none !important;
+}
+.se-btn-tray {
+  border: none !important;
+}
+.se-toolbar {
+  border: none !important;
+  background-color: white !important;
+  outline: 1px solid transparent !important;
+}
+.se-btn-module {
+  border: none !important;
+}

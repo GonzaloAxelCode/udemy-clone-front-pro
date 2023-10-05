@@ -82,7 +82,7 @@ export default function CurriculumListAndSublists() {
 
   const createContainer = (title: string, learning_objetive: string) => {
     const newContainer = {
-      id: blocks.length + 1, 
+      id: blocks.length + 1,
       parent_id: null,
       type: "container",
       title,
@@ -106,6 +106,7 @@ export default function CurriculumListAndSublists() {
         {blocks.map((block, blockIndex) => {
           return (
             <BlockWrapper
+              index={blockIndex + 1}
               key={block.id}
               block={block}
               blocks={blocks}
@@ -132,7 +133,14 @@ export default function CurriculumListAndSublists() {
   );
 }
 
-function Container({ block, idsection, blockIndex, setBlocks, blocks }: any) {
+function Container({
+  index,
+  block,
+  idsection,
+  blockIndex,
+  setBlocks,
+  blocks,
+}: any) {
   const handleDeleteContainer = () => {
     setBlocks((prevBlocks: any) => {
       const updatedBlocks = [...prevBlocks];
@@ -157,7 +165,7 @@ function Container({ block, idsection, blockIndex, setBlocks, blocks }: any) {
           Math.max(
             ...(blocks?.flatMap((block: any) =>
               block.children.map((child: any) => child.id)
-            ) ?? [0]), 
+            ) ?? [0]),
             0
           ) + 1,
         title,
@@ -203,6 +211,7 @@ function Container({ block, idsection, blockIndex, setBlocks, blocks }: any) {
   return (
     <SectionContainer
       title={block.title}
+      index={index}
       handleDeleteContainer={handleDeleteContainer}
       idsection={idsection}
       block={block}
@@ -286,6 +295,7 @@ function BlockWrapper({
           idsection={block.id}
           blocks={blocks}
           block={block}
+          index={index}
           setBlocks={setBlocks}
           blockIndex={blockIndex}
         />
