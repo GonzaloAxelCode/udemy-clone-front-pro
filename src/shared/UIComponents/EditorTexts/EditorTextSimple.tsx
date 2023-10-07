@@ -1,4 +1,10 @@
-import ReactQuill from "react-quill";
+"use client";
+
+import dynamic from "next/dynamic";
+
+//import ReactQuill from "react-quill";
+
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 import Flex from "../CustomHTML/Flex";
 
 const EditorTextSimple = ({ name, onChange, label = false }: any) => {
