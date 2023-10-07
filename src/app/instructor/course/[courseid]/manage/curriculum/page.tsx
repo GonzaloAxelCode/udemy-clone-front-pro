@@ -12,19 +12,3 @@ const Page = () => {
 
 export default Page;
 
-/*
-
- <SectionContainer>
-        <Flex
-          full
-          noitemscenter
-          col
-          style={{
-            padding: "0 0 5px 60px",
-          }}
-        >
-          <LectureEditorItem />
-        </Flex>
-        <InlineInsertItem />
-      </SectionContainer>
-*/

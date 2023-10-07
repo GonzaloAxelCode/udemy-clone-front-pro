@@ -1,4 +1,4 @@
-const ArrowDownIcon = ({ scale = "0.8", fill = "", ...args }) => {
+const ArrowDownIcon = ({ scale = "0.8", fill = "", ...args }:any) => {
   return (
     <svg
       xmlnsXlink="http://www.w3.org/1999/xlink"

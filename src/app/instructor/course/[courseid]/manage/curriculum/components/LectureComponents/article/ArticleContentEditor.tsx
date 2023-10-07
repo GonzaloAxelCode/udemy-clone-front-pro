@@ -1,12 +1,9 @@
 import Button from "@/shared/UIComponents/Buttons/Button";
 import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import P from "@/shared/UIComponents/CustomHTML/P";
-import dynamic from "next/dynamic";
 import { useRef } from "react";
+import SunEditor from "suneditor-react";
 import SunEditorCore from "suneditor/src/lib/core";
-const SunEditor = dynamic(() => import("suneditor-react"), {
-  ssr: false,
-});
 
 const ArticleContentEditor = ({ onClose }: any) => {
   const editor = useRef<SunEditorCore>();

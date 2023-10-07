@@ -3,7 +3,7 @@ const PlayIconDark = ({
   color = "#2D2F31",
   ...args
 }: {
-  color: string;
+  color?: string;
   scale?: string;
 }) => {
   return (
