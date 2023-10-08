@@ -13,15 +13,11 @@ import Link from "next/link";
 import { cn } from "tailwind-cn";
 import useScrollY from "../../../shared/hooks/useScrollY";
 
-const SidebarPurchaseCourse = ({ extraClassNames = "" }) => {
+const SidebarPurchaseCourse = () => {
   const scrollY = useScrollY();
   return (
-    <div className="bg-white">
-      <Flex
-        col
-        noitemscenter
-        className={cn("w-[340px] relative", extraClassNames)}
-      >
+    <div className="bg-white  w-[340px]">
+      <Flex col noitemscenter className="relative  ">
         <Link
           style={{
             position: "relative",
@@ -52,8 +48,9 @@ const SidebarPurchaseCourse = ({ extraClassNames = "" }) => {
 
         <Flex
           col
+          full
           noitemscenter
-          className="w-full p-5 border-solid border-1 border-gray-200 shadow-md"
+          className="p-5 border-solid border-1 border-gray-200 shadow-md"
         >
           <Title className="mb-3">S/249.90</Title>
 

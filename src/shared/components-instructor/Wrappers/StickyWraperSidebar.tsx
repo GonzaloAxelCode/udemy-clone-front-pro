@@ -16,7 +16,7 @@ const StickyWraperSidebar = ({ children }: any) => {
     setOpenMenuNavInstructor(false);
   };
   return (
-    <div style={{ position: "sticky", top: 0, zIndex: 50 }}>
+    <div style={{ position: "sticky", height:"50vh", top: 0, zIndex: 50 }}>
       <motion.div
         initial={{ width: widthInitial }}
         transition={{

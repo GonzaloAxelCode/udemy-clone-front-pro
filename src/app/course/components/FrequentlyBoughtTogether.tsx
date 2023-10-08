@@ -9,7 +9,7 @@ import Link from "next/link";
 const FrequentlyBoughtTogether = () => {
   return (
     <Flex full col noitemscenter className="hr-full p-5 my-6">
-      <Title className="mt-3 mb-2 text-2xl ">Students also bought </Title>
+      <Title className="mt-3 mb-2 text-2xl ">Frequently Bought Together</Title>
       <Flex full col noitemscenter>
         {_frequenty.map((el: any, index: number) => {
           return (
@@ -20,7 +20,7 @@ const FrequentlyBoughtTogether = () => {
               between
               className="justify-between py-4 "
             >
-              <Flex w-full className="mr-2">
+              <Flex className="mr-2">
                 <img src={el.image} className=" h-[112px] w-[200px]" />
               </Flex>
               <Flex full col noitemscenter between className="max-w-[50%]">
@@ -29,7 +29,7 @@ const FrequentlyBoughtTogether = () => {
                 </span>
                 <span className="text-xs text-gray-300">{el.author}</span>
 
-                <Flex col noitemscenter className="space-x-2 items-center">
+                <Flex col noitemscenter className="space-x-2 ">
                   <Link href="#" className="flex space-x-2 items-center">
                     <Flex className="space-x-1">
                       <span className="text-orange-400 font-bold text-sm mt-1">
@@ -51,11 +51,13 @@ const FrequentlyBoughtTogether = () => {
                       ({el.numValoraciones})
                     </span>
                   </Link>
-                  <HighestRated />
+                  <Flex>
+                    <HighestRated />
+                  </Flex>
                 </Flex>
               </Flex>
-              <Flex className="space-x-3 flex-start ml-auto ">
-                <Flex>
+              <Flex noitemscenter className="space-x-3 flex-start ml-auto ">
+                <Flex noitemscenter>
                   <span className="font-bold text-md">s/.{el.price}</span>
                 </Flex>
               </Flex>

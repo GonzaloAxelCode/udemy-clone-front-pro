@@ -58,7 +58,7 @@ const PopoverTooltip = ({
       {...args}
     >
       <HtmlTooltip
-        title={<Flex className="text-dark-100">{children}</Flex>}
+        title={<Flex full className="text-dark-100">{children}</Flex>}
         arrow={arrow}
         placement="right"
         PopperProps={{

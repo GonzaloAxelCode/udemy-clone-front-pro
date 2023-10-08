@@ -47,6 +47,8 @@ const CarruselSimple = ({
         width: "98vw",
         transform: "translateX(-20px)",
       }}
+      draggable
+      scrollSnap
       responsiveLayout={layouts}
       cols={cols}
       rows={rows}
@@ -61,7 +63,7 @@ const CarruselSimple = ({
           )}
         >
           <ArrowLeftWhiteIcon
-            style={{ marginLeft: "6px", marginTop: "7px", scale: "1.2" }}
+          
           />
         </button>
       }
@@ -72,7 +74,7 @@ const CarruselSimple = ({
             buttonsCenter ? "center-btn-carrousel" : ""
           )}
         >
-          <ArrowRightWhiteIcon scale="1.2" />
+          <ArrowRightWhiteIcon />
         </button>
       }
       {...args}

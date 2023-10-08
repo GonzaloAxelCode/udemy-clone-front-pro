@@ -1,5 +1,6 @@
 import Button from "@/shared/UIComponents/Buttons/Button";
 import Flex from "@/shared/UIComponents/CustomHTML/Flex";
+import P from "@/shared/UIComponents/CustomHTML/P";
 import PopoverTooltip from "@/shared/UIComponents/Popovers/PopoverTooltip";
 import CheckIcon from "@/shared/UIComponents/icons/CheckIcon";
 import HeartIcon from "@/shared/UIComponents/icons/HeartIcon";
@@ -18,19 +19,17 @@ const listaLearn = [
 
 const CourseInfoPopover = ({ children, course, ...args }: any) => {
   return (
-    <PopoverTooltip content={children}>
+    <PopoverTooltip content={<div>{children}</div>}>
       <Flex
-        className="text-dark-100 p-7"
+        full
         col
         noitemscenter
         key={course.id}
         between
-        full
+        className="text-dark-100 p-7"
       >
         <Flex full col noitemscenter between>
-          <span className="text-xl font-bold w-[90%] mb-2 line-h">
-            {course.title}
-          </span>
+          <P bold lg className=" w-[90%] line-h">{course.title}</P>
 
           <Flex full className="space-x-3">
             <HighestRated

@@ -19,7 +19,7 @@ const CoursePage = () => {
     <Flex col noitemscenter full className="relative">
       <CurseTopFixed />
       <PresentationCourse />
-      <Flex full noitemscenter className="py-10">
+      <Flex full noitemscenter className="py-8">
         <Flex className="flex-start m-auto lg:max-w-[670px] max-w-[600px]">
           <Flex col noitemscenter>
             <WhatYouLearn />

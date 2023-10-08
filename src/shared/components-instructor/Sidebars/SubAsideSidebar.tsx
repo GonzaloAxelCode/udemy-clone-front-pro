@@ -11,7 +11,7 @@ const SubAsideSidebar = ({ data }: any) => {
   }
   return (
     <aside
-      style={{ position: "sticky", top: 0, zIndex: 40 }}
+      style={{ position: "sticky",height:"30vh", width:"300px",top: 0, zIndex: 40 }}
       className="p-0 p-0 m-0 bg-gray-100 "
     >
       <div

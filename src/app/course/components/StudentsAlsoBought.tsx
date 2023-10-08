@@ -22,7 +22,7 @@ const StudentsAlsoBought = () => {
                 between
                 className="justify-between py-4 hr-bottom"
               >
-                <Flex w-full className="mr-2">
+                <Flex  className="mr-2">
                   <img src={el.image} width={64} height={64} />
                 </Flex>
                 <Flex full col noitemscenter between className="max-w-[50%]">

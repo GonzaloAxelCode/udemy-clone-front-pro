@@ -28,8 +28,6 @@ const WrapperNabvar = styled.div`
   padding-right: 1.3rem; /* pr-6 */
   width: 100%; /* w-full */
 
-  z-index: 100;
-  position: relative;
   padding-top: 0.68rem;
   padding-bottom: 0.68rem;
 `;
@@ -47,8 +45,12 @@ const Navbar = () => {
       noitemscenter
       style={{
         boxShadow:
-          "0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08)",
+          " 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08)",
+        position: "relative",
+        zIndex:1000,
       }}
+
+
     >
       <WrapperNabvar className="hr-bottom">
         <Flex maxscreen={800} className="flex-grow">

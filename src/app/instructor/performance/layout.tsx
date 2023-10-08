@@ -28,7 +28,7 @@ const layout = ({ children }: any) => {
   return (
     <>
       <SubAsideSidebar data={_data_subsidebar_example} />
-      <Flex full className="flex-grow mt-16">
+      <Flex full className="flex-grow  mt-16 min-h-screen">
         {children}
       </Flex>
     </>

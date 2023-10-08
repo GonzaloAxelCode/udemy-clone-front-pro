@@ -83,14 +83,14 @@ const Flex = (
 
   return (
     <StyledFlex2
-      className={`${flexClasses} ${props.className || ""}`}
-      disabled={props.disabled}
-      cssmax={props.cssmax}
-      cssmin={props.cssmin}
-      minscreen={props.minscreen}
-      maxscreen={props.maxscreen}
-      style={props.style}
-      {...restProps}
+    className={`${flexClasses} ${props.className || ""}`}
+    disabled={props.disabled}
+    cssmax={props.cssmax}
+    cssmin={props.cssmin}
+    minscreen={props.minscreen}
+    maxscreen={props.maxscreen}
+    style={props.style}
+    {...restProps}
     >
       {props.children}
     </StyledFlex2>

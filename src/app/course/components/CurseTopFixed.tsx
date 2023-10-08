@@ -1,17 +1,9 @@
 import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import ReactStars2 from "@/shared/lib/react-stars";
 import Link from "next/link";
-import styled from "styled-components";
-const FixedTop = styled.div`
-  z-index: 30;
-  position: fixed;
-  top: 0;
-  width: 100%;
-`;
-
 const CurseTopFixed = () => {
   return (
-    <FixedTop className="hidden lg:block">
+    <div className="fixed z-18 top-0 w-full hidden lg:block">
       <Flex
         maxscreen={600}
         full
@@ -46,9 +38,11 @@ const CurseTopFixed = () => {
             <span className="text-sm text-white pt-1">105,177 students</span>
           </Flex>
         </Flex>
-        <Flex className="flex-end  space-x-2"><></></Flex>
+        <Flex className="flex-end  space-x-2">
+          <></>
+        </Flex>
       </Flex>
-    </FixedTop>
+    </div>
   );
 };
 

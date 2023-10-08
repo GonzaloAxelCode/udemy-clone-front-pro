@@ -139,6 +139,7 @@ export default function CurriculumListAndSublists() {
         {blocks.map((block, blockIndex) => {
           return (
             <BlockWrapper
+
               ORDER_ALL={ORDER_ALL}
               key={block.id}
               block={block}

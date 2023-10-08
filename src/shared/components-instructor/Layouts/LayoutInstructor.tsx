@@ -20,7 +20,6 @@ const LayoutInstructor = ({ children }: any) => {
               {children}
             </Flex>
           </Flex>
-
           <Footer />
         </body>
       </Providers>

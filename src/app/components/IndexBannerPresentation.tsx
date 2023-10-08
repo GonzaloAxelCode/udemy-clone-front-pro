@@ -21,7 +21,7 @@ const IndexBannerPresentation = () => {
             top: "12%",
             left: "5%",
           }}
-          className="bg-white shadow-lg   lg:w-[440px] w-[340px] p-6"
+          className="bg-white shadow-lg max-w-[370px] p-6"
         >
           <div className="mr-12">
             <p className="text-4xl font-suisse-works leading-10">
@@ -36,7 +36,7 @@ const IndexBannerPresentation = () => {
         </Flex>
       </Flex>
 
-      <Flex minscreen={700} col noitemscenter className="bg-white  w-full p-6">
+      <Flex minscreen={700} col noitemscenter className="bg-white   w-full p-6">
         <div className="mr-12">
           <p className="text-2xl font-suisse-works leading-10">
             Adelante, adelante

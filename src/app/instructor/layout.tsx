@@ -2,6 +2,7 @@ import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 
 const layout = ({ children }: any) => {
   return (
+    
     <Flex
       full
       noitemscenter

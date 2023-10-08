@@ -1,7 +1,7 @@
 "use client";
 import Button from "@/shared/UIComponents/Buttons/Button";
-import Sidebar from "@/shared/UIComponents/Popovers/Sidebars/Sidebar";
 import Flex from "@/shared/UIComponents/CustomHTML/Flex";
+import Sidebar from "@/shared/UIComponents/Popovers/Sidebars/Sidebar";
 import ArrowLeftIcon from "@/shared/UIComponents/icons/ArrowLeftIcon";
 import LanguageIcon from "@/shared/UIComponents/icons/LanguageIcon";
 import Link from "next/link";
@@ -14,7 +14,7 @@ const MenuPhone = () => {
       <Flex col noitemscenter full>
         <Link href="#">
           <Flex full justifycenter className="bg-gray-100 space-x-1 p-4">
-            <UserImage className="w-16 h-16" />
+            <UserImage className="w-[50px] h-[50px]" />
             <span className="flex flex-grow">
               <span className="flex flex-col flex-grow text-dark-100 text-md font-bold">
                 Hi, <br />

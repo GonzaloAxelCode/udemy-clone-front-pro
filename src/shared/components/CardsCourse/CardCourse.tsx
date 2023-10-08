@@ -71,7 +71,7 @@ const CardCourse = ({
           </span>
           <span className="text-xs text-gray-300">{author}</span>
 
-          <Flex col noitemscenter className="space-x-2 items-center">
+          <Flex col noitemscenter className="space-x-2">
             <Link href="#" className="flex space-x-2 items-center">
               <Flex className="space-x-1">
                 <span className="text-orange-500 font-bold text-sm mt-1">
