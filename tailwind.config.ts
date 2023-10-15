@@ -92,6 +92,7 @@ const config: Config = {
         "1": "1px",
       },
       screens: {
+        smm: "600px", // Pequeño
         sm: "640px", // Pequeño
         md: "768px", // Mediano
         md2: "980px",

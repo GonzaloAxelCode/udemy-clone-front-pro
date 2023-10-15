@@ -1,7 +1,9 @@
+import { useState } from "react";
 import Flex from "../../UIComponents/CustomHTML/Flex";
 import SearchIcon from "../../UIComponents/icons/SearchIcon";
 
 const SearchInput = () => {
+  const [value, setValue] = useState("");
   return (
     <Flex
       full
@@ -12,11 +14,15 @@ const SearchInput = () => {
         <SearchIcon />
       </Flex>
       <Flex className="flex-grow">
-        <input
-          className="outline-none h-full ml-2 mr-4 text-sm w-full"
-          type="text"
-          placeholder="Search for anything"
-        />
+        <form action={`/search?src=ukw&q=${value}`}>
+          <input
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+            className="outline-none h-full ml-2 mr-4 text-sm w-full"
+            type="text"
+            placeholder="Search for anything"
+          />
+        </form>
       </Flex>
     </Flex>
   );

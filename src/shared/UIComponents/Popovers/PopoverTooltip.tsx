@@ -60,7 +60,7 @@ const PopoverTooltip = ({
       <HtmlTooltip
         title={<Flex full className="text-dark-100">{children}</Flex>}
         arrow={arrow}
-        placement="right"
+        placement="bottom-end"
         PopperProps={{
           popperOptions: {
             placement: placement,
