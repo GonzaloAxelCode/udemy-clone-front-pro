@@ -1,9 +1,18 @@
+"use client";
 import { useState } from "react";
 import Flex from "../../UIComponents/CustomHTML/Flex";
 import SearchIcon from "../../UIComponents/icons/SearchIcon";
 
+import { useRouter } from "next/navigation";
+
 const SearchInput = () => {
   const [value, setValue] = useState("");
+
+  const router = useRouter();
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    router.push(`/courses/search?src=ukw&q=${encodeURIComponent(value)}`); // Navigate to the search page
+  };
   return (
     <Flex
       full
@@ -14,7 +23,7 @@ const SearchInput = () => {
         <SearchIcon />
       </Flex>
       <Flex className="flex-grow">
-        <form action={`/search?src=ukw&q=${value}`}>
+        <form onSubmit={handleSubmit}>
           <input
             value={value}
             onChange={(e) => setValue(e.target.value)}

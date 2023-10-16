@@ -7,7 +7,7 @@ import ArrowDownIcon from "@/shared/UIComponents/icons/ArrowDownIcon";
 import FilterIcon from "@/shared/UIComponents/icons/FilterIcon";
 import HighestRated from "@/shared/UIComponents/others/HighestRated";
 import ReactStars2 from "@/shared/lib/react-stars";
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { cn } from "tailwind-cn";
 import ListAccordionOptionsSearch from "./components/ListAccordionOptionsSearch";
@@ -332,12 +332,10 @@ const data = [
     discount: "39.99",
   },
 ];
-
 const PageSearch = () => {
   const [openFilters, setOpenFilters] = useState(false);
   const searchParams = useSearchParams();
-  const order = searchParams.get('q') || "reactjs";
-
+  const order = searchParams.get("q") || "reactjs";
 
   return (
     <Flex full col noitemscenter>
