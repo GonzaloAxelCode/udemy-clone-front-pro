@@ -59,7 +59,7 @@ const CardCourse = ({
         full
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className="justify-between py-4"
+        className="justify-between py-4 relative"
       >
         <div className={cn("", isHovered && "image-hover")}>
           <img src={image} className="w-full hr-full" />
@@ -69,6 +69,7 @@ const CardCourse = ({
           <span className="text-md font-bold text-dark-100 mt-3 leading-4 ">
             {title}
           </span>
+          <Link href={`/course/${title}`} className="absolute inset-0"></Link>
           <span className="text-xs text-gray-300">{author}</span>
 
           <Flex col noitemscenter className="space-x-2">

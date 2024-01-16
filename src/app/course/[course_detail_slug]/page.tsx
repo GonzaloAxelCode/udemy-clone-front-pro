@@ -1,18 +1,18 @@
 "use client";
 import Flex from "@/shared/UIComponents/CustomHTML/Flex";
-import CourseContent from "./components/CourseContent";
-import CourseRatingReviews from "./components/CourseRatingReviews";
-import CurseBottomFixed from "./components/CurseBottomFixed";
-import CurseTopFixed from "./components/CurseTopFixed";
-import DescriptionCourse from "./components/DescriptionCourse";
-import FeaturedReview from "./components/FeaturedReview";
-import FrequentlyBoughtTogether from "./components/FrequentlyBoughtTogether";
-import InstructorCourse from "./components/InstructorCourse";
-import MoreCoursesBy from "./components/MoreCoursesBy";
-import PresentationCourse from "./components/PresentationCourse";
-import RequerimentsCourse from "./components/RequerimentsCourse";
-import StudentsAlsoBought from "./components/StudentsAlsoBought";
-import WhatYouLearn from "./components/WhatYouLearn";
+import CourseContent from "../components/CourseContent";
+import CourseRatingReviews from "../components/CourseRatingReviews";
+import CurseBottomFixed from "../components/CurseBottomFixed";
+import CurseTopFixed from "../components/CurseTopFixed";
+import DescriptionCourse from "../components/DescriptionCourse";
+import FeaturedReview from "../components/FeaturedReview";
+import FrequentlyBoughtTogether from "../components/FrequentlyBoughtTogether";
+import InstructorCourse from "../components/InstructorCourse";
+import MoreCoursesBy from "../components/MoreCoursesBy";
+import PresentationCourse from "../components/PresentationCourse";
+import RequerimentsCourse from "../components/RequerimentsCourse";
+import StudentsAlsoBought from "../components/StudentsAlsoBought";
+import WhatYouLearn from "../components/WhatYouLearn";
 
 const CoursePage = () => {
   return (

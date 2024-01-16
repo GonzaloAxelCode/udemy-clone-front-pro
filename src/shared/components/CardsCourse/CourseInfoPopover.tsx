@@ -5,6 +5,7 @@ import PopoverTooltip from "@/shared/UIComponents/Popovers/PopoverTooltip";
 import CheckIcon from "@/shared/UIComponents/icons/CheckIcon";
 import HeartIcon from "@/shared/UIComponents/icons/HeartIcon";
 import HighestRated from "@/shared/UIComponents/others/HighestRated";
+import Link from "next/link";
 const listaLearn = [
   {
     text: "The course provides the entire toolbox you need to become a data scientist",
@@ -29,7 +30,13 @@ const CourseInfoPopover = ({ children, course, ...args }: any) => {
         className="text-dark-100 p-7"
       >
         <Flex full col noitemscenter between>
-          <P bold lg className=" w-[90%] line-h">{course.title}</P>
+          <P bold lg className=" w-[90%] line-h relative">
+            <Link
+              href={`/course/${course.title}`}
+              className="absolute inset-0"
+            ></Link>
+            {course.title}
+          </P>
 
           <Flex full className="space-x-3">
             <HighestRated

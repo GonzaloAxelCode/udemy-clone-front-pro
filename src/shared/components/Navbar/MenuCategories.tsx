@@ -27,7 +27,7 @@ const MenuCategories = () => {
             <li key={index} onMouseEnter={() => setHoverCategory(el)}>
               <Link
                 className="flex justify-between py-1 text-gray-400 hover:text-purple-300"
-                href="#"
+                href={`/topic/${el.text}`}
               >
                 <span className="text-sm ">{el.text}</span>
                 <span>
@@ -53,7 +53,7 @@ const MenuCategories = () => {
                   >
                     <Link
                       className="flex justify-between py-1 text-gray-400 hover:text-purple-300"
-                      href="#"
+                      href={`/topic/${subCategoria.text}`}
                     >
                       <span className="text-sm ">{subCategoria.text}</span>
                       <span>
@@ -77,7 +77,7 @@ const MenuCategories = () => {
                   <li key={index}>
                     <Link
                       className="flex justify-between py-1 text-gray-400 hover:text-purple-300"
-                      href="#"
+                      href={`/topic/${subSubCategoria.text}`}
                     >
                       <span className="text-sm ">{subSubCategoria.text}</span>
                       <span>

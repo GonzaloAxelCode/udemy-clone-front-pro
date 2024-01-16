@@ -44,7 +44,7 @@ const SubNavCategories = () => {
                   onMouseLeave={() => {
                     setKeyHover(index);
                   }}
-                  href="#"
+                  href={`/topic/${el.text}`}
                   className={cn(
                     keyHover === index && isHover && "triangule",
                     " flex-grow h-full triangule-bottom-center py-3 px-4 text-gray-400 hover:text-purple-300"
@@ -72,7 +72,7 @@ const SubNavCategories = () => {
           {hoverDataCategory?.slice(0, 8).map((el: any, index: number) => {
             return (
               <Link
-                href="#"
+                href={`/topic/${el.text}`}
                 className="triangule-bottom-center py-3 px-4 text-white hover:text-purple-200"
                 key={index}
               >

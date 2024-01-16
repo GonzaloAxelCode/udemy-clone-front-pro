@@ -2,6 +2,7 @@ import CarruselSimple from "@/shared/UIComponents/Carrusels/CarruselSimple";
 import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import Title from "@/shared/UIComponents/Texts/Title";
 import CardCourse from "@/shared/components/CardsCourse/CardCourse";
+//@ts-ignore
 import Carousel from "better-react-carousel";
 
 import __courses from "@/shared/data/__courses";

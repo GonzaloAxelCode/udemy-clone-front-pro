@@ -4,7 +4,7 @@ import Flex from "@/shared/UIComponents/CustomHTML/Flex";
 import P from "@/shared/UIComponents/CustomHTML/P";
 import Link from "next/link";
 
-const page = () => {
+const ClosePage = () => {
   return (
     <Flex full>
       <Flex full col noitemscenter className="max-w-[600px]">
@@ -28,4 +28,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default ClosePage;
